@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-require __DIR__.'/auth.php';
-require __DIR__ . '/admin.php';
+require __DIR__ . '/auth.php';
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ], function () {
+
+    require __DIR__ . '/admin.php';
+
+});

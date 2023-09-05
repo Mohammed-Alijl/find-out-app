@@ -8,13 +8,15 @@
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'ar')
         <link class="js-stylesheet" href="{{URL::asset('css/app.rtl.css')}}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     @else
-        <link class="js-stylesheet" href="{{URL::asset('css/light.css')}}" rel="stylesheet">
+        <link class="js-stylesheet" href="{{URL::asset('css/dark.css')}}" rel="stylesheet">
     @endif
     @yield('css')
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="https://hwdolive.hilwawater.sa/images/hilwa-water-logo.svg"/>
+
 
     <link rel="canonical" href="https://demo.adminkit.io/pages-blank.html"/>
 

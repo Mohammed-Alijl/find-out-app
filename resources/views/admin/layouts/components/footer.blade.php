@@ -3,7 +3,7 @@
         <div class="row text-muted">
             <div class="col-6 text-start">
                 <p class="mb-0">
-                    <span>All rights reserved ©{{date('Y')}} Find Out</span>
+                    <span>{{__('admin/layouts/components/footer.copyright')}}<a href="#"> {{__('admin/layouts/components/footer.name')}}</a></span>
                 </p>
             </div>
         </div>
