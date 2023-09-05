@@ -13,28 +13,25 @@
                     <div class="sidebar-user">
                         <div class="d-flex justify-content-center">
                             <div class="flex-shrink-0">
-                                <img src="{{URL::asset('img/admins/')}}"
+                                <img src="{{URL::asset('storage/img/'.auth('admin')->user()->image)}}"
                                      class="avatar img-fluid rounded me-1" alt="Administrator"/>
                             </div>
                             <div class="flex-grow-1 ps-2">
                                 <a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
-
+                                    {{auth()->user()->name}}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-start">
                                     <a class="dropdown-item" href="#"><i class="align-middle me-1"
-                                                                         data-feather="user"></i>
-                                        {{__('Front-end/sidebar.profile')}}</a>
-                                    <a class="dropdown-item" href="#"><i class="align-middle me-1"
-                                                                         data-feather="settings"></i> {{__('Front-end/sidebar.settings')}}
+                                                                         data-feather="settings"></i> Settings
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    {{--                                    <form method="post" action="{{route('admin.logout')}}">--}}
-                                    {{--                                        @csrf--}}
-                                    {{--                                        <button type="submit" class="dropdown-item">--}}
-                                    {{--                                            <i class="align-middle me-2" data-feather="log-out"></i>--}}
-                                    {{--                                            {{__('Front-end/sidebar.logout')}}--}}
-                                    {{--                                        </button>--}}
-                                    {{--                                    </form>--}}
+                                                                        <form method="post" action="{{route('admin.logout')}}">
+                                                                            @csrf
+                                                                            <button type="submit" class="dropdown-item">
+                                                                                <i class="align-middle me-2" data-feather="log-out"></i>
+                                                                                Logout
+                                                                            </button>
+                                                                        </form>
                                 </div>
 
                                 <div
