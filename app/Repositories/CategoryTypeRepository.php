@@ -30,7 +30,6 @@ class CategoryTypeRepository implements BasicRepositoryInterface
         $type = CategoryType::findOrFail($id);
         $type->setTranslation('name','ar',$request->name_ar);
         $type->setTranslation('name','en',$request->name_en);
-        $type->zone_id = $request->zone_id;
         $type->save();
     }
 
