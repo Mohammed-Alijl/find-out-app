@@ -21,4 +21,13 @@ return [
     'zone.name_en.required'=>'Please Enter The English Zone Name',
     'zone.name_en.max'=>'The English Zone Name Is Too Long',
 
+    //===================================================================================
+    // CITES=============================================================================
+    //===================================================================================
+    'city.delete.failed'=>'The City Is In Use',
+    'city.name_ar.required'=>'Please Enter The Arabic City Name',
+    'city.name_ar.max'=>'The Arabic City Name Is Too Long',
+    'city.name_en.required'=>'Please Enter The English City Name',
+    'city.name_en.max'=>'The English City Name Is Too Long',
+    'city.zone_id.required'=>'Please Select A Zone From Zone Selected Box',
 ];
