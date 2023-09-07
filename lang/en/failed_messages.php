@@ -43,6 +43,7 @@ return [
     //===================================================================================
     // CATEGORY==========================================================================
     //===================================================================================
+    'category.delete.failed'=>'The Category Is In Use',
     'category.name_ar.required'=>'Please Enter The Arabic Category Name',
     'category.name_ar.max'=>'The Arabic Category Name Is Too Long',
     'category.name_en.required'=>'Please Enter The English Category Name',

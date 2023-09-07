@@ -39,7 +39,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('category/types',CategoryTypeController::class)->except(['create','show','edit']);
 
         //Category
-        Route::resource('categories',CategoryController::class)->except(['create','show','edit']);
+        Route::resource('categories',CategoryController::class)->except(['create','edit']);
     });
 
     //Auth:guest
