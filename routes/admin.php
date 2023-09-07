@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\ZoneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,9 @@ Route::prefix('admin')->group(function () {
 
         //Zone
         Route::resource('zones',ZoneController::class)->except(['create','show','edit']);
+
+        //City
+        Route::resource('cities',CityController::class)->except(['create','show','edit']);
     });
 
     //Auth:guest
