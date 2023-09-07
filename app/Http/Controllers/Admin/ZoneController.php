@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ZoneRequest;
 use App\Repositories\ZoneRepository;
 use Illuminate\Http\Request;
 
@@ -32,9 +33,10 @@ class ZoneController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ZoneRequest $request)
     {
-        //
+        $this->zoneRepository->create($request);
+        return redirect()->back()->with('add-success',__('success_messages.zone.add.success'));
     }
 
     /**

@@ -35,8 +35,8 @@
                         <td>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#edit"
                                data-id="{{ $zone->id }}"
-                               data-name_ar="{{ $unit->getTranslation('name','ar') }}"
-                               data-name_en="{{ $unit->getTranslation('name','en') }}"
+                               data-name_ar="{{ $zone->getTranslation('name','ar') }}"
+                               data-name_en="{{ $zone->getTranslation('name','en') }}"
                             >
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
@@ -73,7 +73,7 @@
                             <label class="form-label" for="name">{{__('admin/pages/zones.name_ar')}} <span
                                     style="color: red">*</span></label>
                             <input id="name" type="text" class="form-control"
-                                   placeholder="{{__('admin/pages/zones.name_ar')}}" autocomplete="off" name="name_ar"
+                                   placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_ar"
                                    required>
                             <div class="invalid-feedback">
                                 {{__('admin/pages/zones.name.invalid')}}
@@ -85,7 +85,7 @@
                             <label class="form-label" for="name">{{__('admin/pages/zones.name_en')}} <span
                                     style="color: red">*</span></label>
                             <input id="name" type="text" class="form-control"
-                                   placeholder="{{__('admin/pages/zones.name_en')}}" autocomplete="off" name="name_en"
+                                   placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_en"
                                    required>
                             <div class="invalid-feedback">
                                 {{__('admin/pages/zones.name.invalid')}}
@@ -126,9 +126,10 @@
                         </div>
                         <!-- Name Arabic-->
                         <div class="mb-3">
-                            <label class="form-label" for="edit_name_ar">{{__('admin/pages/zones.name_ar')}}</label>
+                            <label class="form-label" for="edit_name_ar">{{__('admin/pages/zones.name_ar')}} <span
+                                    style="color: red">*</span></label>
                             <input id="edit_name_ar" type="text" class="form-control"
-                                   placeholder="{{__('admin/pages/zones.name_ar')}}" autocomplete="off" name="name_ar"
+                                   placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_ar"
                                    required>
                             <div class="invalid-feedback">
                                 {{__('admin/pages/zones.name.invalid')}}
@@ -137,9 +138,10 @@
 
                         <!-- Name English-->
                         <div class="mb-3">
-                            <label class="form-label" for="edit_name_en">{{__('admin/pages/zones.name_en')}}</label>
+                            <label class="form-label" for="edit_name_en">{{__('admin/pages/zones.name_en')}} <span
+                                    style="color: red">*</span></label>
                             <input id="edit_name_en" type="text" class="form-control"
-                                   placeholder="{{__('admin/pages/zones.name_en')}}" autocomplete="off" name="name_en"
+                                   placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_en"
                                    required>
                             <div class="invalid-feedback">
                                 {{__('admin/pages/zones.name.invalid')}}

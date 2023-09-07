@@ -19,7 +19,11 @@ class ZoneRepository implements BasicRepositoryInterface
 
     public function create($request)
     {
-        // TODO: Implement create() method.
+        $zone = new Zone();
+        $zone->setTranslation('name','ar',$request->name_ar);
+        $zone->setTranslation('name','en',$request->name_en);
+        $zone->country_id = 1;
+        $zone->save();
     }
 
     public function update($request, $id)
