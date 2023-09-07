@@ -40,5 +40,14 @@ return [
     'category.type.name_en.required'=>'Please Enter The English Category Type Name',
     'category.type.name_en.max'=>'The English Category Type Name Is Too Long',
 
+    //===================================================================================
+    // CATEGORY==========================================================================
+    //===================================================================================
+    'category.name_ar.required'=>'Please Enter The Arabic Category Name',
+    'category.name_ar.max'=>'The Arabic Category Name Is Too Long',
+    'category.name_en.required'=>'Please Enter The English Category Name',
+    'category.name_en.max'=>'The English Category Name Is Too Long',
+    'category.category_type_id.required'=>'Please Select A Category From Category Selected Box',
+
 
 ];
