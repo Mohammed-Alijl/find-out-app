@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\CategoryTypeController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\ZoneController;
 use App\Http\Controllers\ProfileController;
@@ -32,6 +33,9 @@ Route::prefix('admin')->group(function () {
 
         //City
         Route::resource('cities',CityController::class)->except(['create','show','edit']);
+
+        //Category Type
+        Route::resource('category/types',CategoryTypeController::class)->except(['create','show','edit']);
     });
 
     //Auth:guest
