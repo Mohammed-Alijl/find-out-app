@@ -69,6 +69,12 @@ class ZoneController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $zone = $this->zoneRepository->find($id);
+        if($zone->cities->count() > 0){
+            return redirect()->back()->with('delete-failed',__('failed_messages.zone.delete.failed'));
+        }else{
+            $this->zoneRepository->delete($id);
+            return redirect()->back()->with('delete-success',__('success_messages.zone.delete.success'));
+        }
     }
 }

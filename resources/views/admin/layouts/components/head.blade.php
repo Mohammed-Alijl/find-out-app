@@ -13,6 +13,7 @@
         <link class="js-stylesheet" href="{{URL::asset('css/dark.css')}}" rel="stylesheet">
     @endif
     @yield('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="https://hwdolive.hilwawater.sa/images/hilwa-water-logo.svg"/>
