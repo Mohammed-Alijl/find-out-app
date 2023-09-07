@@ -27,7 +27,7 @@ Route::prefix('admin')->group(function () {
         Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
 
         //Zone
-        Route::resource('zones',ZoneController::class);
+        Route::resource('zones',ZoneController::class)->except(['create','show','edit']);
     });
 
     //Auth:guest
