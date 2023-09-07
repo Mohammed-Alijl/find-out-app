@@ -54,8 +54,8 @@
                                 <i class="align-middle me-2 fas fa-fw fa-list"></i> <span
                                     class="align-middle">{{__('admin/layouts/components/sidebar.categories')}}</span>
                             </a>
-                            <ul id="categories" class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['zones.index']) ? 'show' : ''}}" data-bs-parent="#sidebar">
-                                <li class="sidebar-item {{request()->route()->named('zones.index') ? 'active' : ''}}"><a class="sidebar-link"
+                            <ul id="categories" class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['types.index']) ? 'show' : ''}}" data-bs-parent="#sidebar">
+                                <li class="sidebar-item {{request()->route()->named('types.index') ? 'active' : ''}}"><a class="sidebar-link"
                                                             href="{{route('types.index')}}">{{__('admin/layouts/components/sidebar.types')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"
                                                             href="#">{{__('admin/layouts/components/sidebar.categories')}}</a></li>
