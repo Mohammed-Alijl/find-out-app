@@ -26,5 +26,12 @@ return [
     'city.edit.success'=>'City Was Modified Successfully',
     'city.delete.success'=>'City was deleted successfully',
 
+    //===================================================================================
+    // CATEGORY TYPES====================================================================
+    //===================================================================================
+    'category.type.add.success'=>'Category Type Was Added Successfully',
+    'category.type.edit.success'=>'Category Type Was Modified Successfully',
+    'category.type.delete.success'=>'Category Type was deleted successfully',
+
 
 ];
