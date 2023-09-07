@@ -33,7 +33,7 @@
                     <th>#</th>
                     <th>{{__('admin/pages/cities.name')}}</th>
                     <th>{{__('admin/pages/cities.zone')}}</th>
-                    <th>{{__('admin/pages/zones.action')}}</th>
+                    <th>{{__('admin/pages/cities.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -64,7 +64,7 @@
             </table>
         </div>
     </div>
-    <!-- Add Zone Form -->
+    <!-- Add City Form -->
     <div class="modal fade" id="add" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
          aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <form action="{{route('cities.store')}}" method="post" class="needs-validation" novalidate>
@@ -123,7 +123,7 @@
         </form>
 
     </div>
-    <!-- Edit Zone Form -->
+    <!-- Edit City Form -->
     <div class="modal fade" id="edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
          aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <form action="cities/update" method="post" class="needs-validation" novalidate>
@@ -132,7 +132,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">{{__('admin/pages/zones.edit.zone')}}</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">{{__('admin/pages/cities.edit.city')}}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -158,7 +158,7 @@
                                    placeholder="{{__('admin/pages/cities.name')}}" autocomplete="off" name="name_en"
                                    required>
                             <div class="invalid-feedback">
-                                {{__('admin/pages/zones.name.invalid')}}
+                                {{__('admin/pages/cities.name.invalid')}}
                             </div>
                         </div>
 
@@ -216,7 +216,7 @@
                 });
         })();
 
-        //Delete Zone Script
+        //Delete City Script
         function deletes(cityId) {
             Swal.fire({
                 title: '{{__('admin/pages/cities.are.you.sure')}}',

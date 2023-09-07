@@ -5,6 +5,7 @@ return [
     'add.city' => 'Add City',
     'name' => 'Name',
     'zone' => 'Zone',
+    'action' => 'Action',
     'choose' => 'Choose...',
     'name_ar' => 'Name In Arabic',
     'name_en' => 'Name In English',
@@ -18,6 +19,7 @@ return [
     'deleted' => 'Deleted!',
     'city.add' => 'City Added',
     'city.edit' => 'City Edited',
+    'edit.city' => 'Edit City',
     'city.cannot.delete' => 'City Can Not Delete',
     'ok' => 'Ok',
 ];
