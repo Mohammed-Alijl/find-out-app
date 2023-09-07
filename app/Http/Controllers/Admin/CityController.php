@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CityRequest;
 use App\Repositories\CityRepository;
+use App\Repositories\ZoneRepository;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
-    public function __construct(private CityRepository $cityRepository)
+    public function __construct(private CityRepository $cityRepository, private ZoneRepository $zoneRepository)
     {
     }
 
@@ -19,7 +20,8 @@ class CityController extends Controller
     public function index()
     {
         $cities = $this->cityRepository->getAll();
-        return view('admin.city.index',compact('cities'));
+        $zones = $this->zoneRepository->getAll();
+        return view('admin.city.index',compact('cities','zones'));
     }
 
     /**
@@ -71,6 +73,6 @@ class CityController extends Controller
     {
         //should edit this when create the service can't be delete if city contain services
         $this->cityRepository->delete($id);
-        return redirect()->back()->with('add-success',__('success_messages.city.delete.success'));
+        return redirect()->back()->with('delete-success',__('success_messages.city.delete.success'));
     }
 }

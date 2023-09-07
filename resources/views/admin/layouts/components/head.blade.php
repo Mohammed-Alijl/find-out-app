@@ -9,6 +9,11 @@
     @if(\Illuminate\Support\Facades\App::getLocale() == 'ar')
         <link class="js-stylesheet" href="{{URL::asset('css/app.rtl.css')}}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     @else
         <link class="js-stylesheet" href="{{URL::asset('css/dark.css')}}" rel="stylesheet">
     @endif
