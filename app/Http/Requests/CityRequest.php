@@ -33,8 +33,8 @@ class CityRequest extends FormRequest
         return [
             'name_ar.required'=>__('failed_messages.city.name_ar.required'),
             'name_ar.max'=>__('failed_messages.city.name_ar.max'),
-            'name_en.required'=>__('failed_messages.city.name_ar.required'),
-            'name_en.max'=>__('failed_messages.city.name_ar.max'),
+            'name_en.required'=>__('failed_messages.city.name_en.required'),
+            'name_en.max'=>__('failed_messages.city.name_en.max'),
             'zone_id.required'=>__('failed_messages.city.zone_id.required'),
             'zone_id.integer'=>__('failed_messages.city.zone_id.required'),
             'zone_id.exists'=>__('failed_messages.city.zone_id.required')

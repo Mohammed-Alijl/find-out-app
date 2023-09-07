@@ -30,4 +30,15 @@ return [
     'city.name_en.required'=>'Please Enter The English City Name',
     'city.name_en.max'=>'The English City Name Is Too Long',
     'city.zone_id.required'=>'Please Select A Zone From Zone Selected Box',
+
+    //===================================================================================
+    // CATEGORY TYPE=====================================================================
+    //===================================================================================
+    'category.type.delete.failed'=>'The Category Type Is In Use',
+    'category.type.name_ar.required'=>'Please Enter The Arabic Category Type Name',
+    'category.type.name_ar.max'=>'The Arabic Category Type Name Is Too Long',
+    'category.type.name_en.required'=>'Please Enter The English Category Type Name',
+    'category.type.name_en.max'=>'The English Category Type Name Is Too Long',
+
+
 ];

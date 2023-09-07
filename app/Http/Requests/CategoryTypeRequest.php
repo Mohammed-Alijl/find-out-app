@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ZoneRequest extends FormRequest
+class CategoryTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,10 +30,10 @@ class ZoneRequest extends FormRequest
     public function messages()
     {
         return [
-            'name_ar.required'=>__('failed_messages.zone.name_ar.required'),
-            'name_ar.max'=>__('failed_messages.zone.name_ar.max'),
-            'name_en.required'=>__('failed_messages.zone.name_en.required'),
-            'name_en.max'=>__('failed_messages.zone.name_en.max'),
+            'name_ar.required'=>__('failed_messages.category.type.name_ar.required'),
+            'name_ar.max'=>__('failed_messages.category.type.name_ar.max'),
+            'name_en.required'=>__('failed_messages.category.type.name_en.required'),
+            'name_en.max'=>__('failed_messages.category.type.name_en.max'),
         ];
     }
 }
