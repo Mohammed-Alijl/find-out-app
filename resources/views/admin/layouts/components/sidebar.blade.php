@@ -67,9 +67,9 @@
                                 <i class="fas fa-globe"></i> <span
                                     class="align-middle">{{__('admin/layouts/components/sidebar.location.management')}}</span>
                             </a>
-                            <ul id="location" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                                <li class="sidebar-item"><a class="sidebar-link"
-                                                            href="#">{{__('admin/layouts/components/sidebar.zones')}}</a></li>
+                            <ul id="location" class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['zones.index']) ? 'show' : ''}}" data-bs-parent="#sidebar">
+                                <li class="sidebar-item {{request()->route()->named('zones.index') ? 'active' : ''}}"><a class="sidebar-link"
+                                                            href="{{route('zones.index')}}">{{__('admin/layouts/components/sidebar.zones')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"
                                                             href="#">{{__('admin/layouts/components/sidebar.cites')}}</a></li>
                             </ul>
