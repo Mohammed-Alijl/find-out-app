@@ -13,6 +13,18 @@
     </div>
 @endsection
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="alert-message">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
     <div class="card">
         <div class="card-body">
             <table id="datatables-reponsive" class="table table-striped" style="width:100%">
@@ -72,7 +84,7 @@
                         <div class="mb-3">
                             <label class="form-label" for="name">{{__('admin/pages/zones.name_ar')}} <span
                                     style="color: red">*</span></label>
-                            <input id="name" type="text" class="form-control"
+                            <input id="name" type="text" class="form-control" maxlength="50"
                                    placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_ar"
                                    required>
                             <div class="invalid-feedback">
@@ -84,7 +96,7 @@
                         <div class="mb-3">
                             <label class="form-label" for="name">{{__('admin/pages/zones.name_en')}} <span
                                     style="color: red">*</span></label>
-                            <input id="name" type="text" class="form-control"
+                            <input id="name" type="text" class="form-control" maxlength="50"
                                    placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_en"
                                    required>
                             <div class="invalid-feedback">
@@ -128,7 +140,7 @@
                         <div class="mb-3">
                             <label class="form-label" for="edit_name_ar">{{__('admin/pages/zones.name_ar')}} <span
                                     style="color: red">*</span></label>
-                            <input id="edit_name_ar" type="text" class="form-control"
+                            <input id="edit_name_ar" type="text" class="form-control" maxlength="50"
                                    placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_ar"
                                    required>
                             <div class="invalid-feedback">
@@ -140,7 +152,7 @@
                         <div class="mb-3">
                             <label class="form-label" for="edit_name_en">{{__('admin/pages/zones.name_en')}} <span
                                     style="color: red">*</span></label>
-                            <input id="edit_name_en" type="text" class="form-control"
+                            <input id="edit_name_en" type="text" class="form-control" maxlength="50"
                                    placeholder="{{__('admin/pages/zones.name')}}" autocomplete="off" name="name_en"
                                    required>
                             <div class="invalid-feedback">

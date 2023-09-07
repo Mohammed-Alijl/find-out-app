@@ -26,4 +26,14 @@ class ZoneRequest extends FormRequest
             'name_en'=>'required|string|max:50',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name_ar.required'=>__('failed_messages.zone.name_ar.required'),
+            'name_ar.max'=>__('failed_messages.zone.name_ar.max'),
+            'name_en.required'=>__('failed_messages.zone.name_ar.required'),
+            'name_en.max'=>__('failed_messages.zone.name_ar.max'),
+        ];
+    }
 }
