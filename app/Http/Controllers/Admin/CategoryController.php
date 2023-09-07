@@ -3,16 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\CategoryRepository;
+use App\Repositories\CategoryTypeRepository;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct(private CategoryRepository $categoryRepository, private CategoryTypeRepository $categoryTypeRepository)
+    {
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $categories = $this->categoryRepository->getAll();
+        $types = $this->categoryTypeRepository->getAll();
+        return view('admin.category.index',compact('categories','types'));
     }
 
     /**
@@ -28,7 +36,8 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->categoryRepository->create($request);
+        return redirect()->back()->with('add-success',__('success_message.category.add.success'));
     }
 
     /**
@@ -50,9 +59,10 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $this->categoryRepository->update($request,$request->id);
+        return redirect()->back()->with('add-success',__('success_message.category.edit.success'));
     }
 
     /**
@@ -60,6 +70,7 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->categoryRepository->delete($id);
+        return redirect()->back()->with('add-success',__('success_message.category.delete.success'));
     }
 }

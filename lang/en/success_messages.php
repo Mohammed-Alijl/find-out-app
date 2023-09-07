@@ -33,5 +33,12 @@ return [
     'category.type.edit.success'=>'Category Type Was Modified Successfully',
     'category.type.delete.success'=>'Category Type was deleted successfully',
 
+    //===================================================================================
+    // CATEGORY==========================================================================
+    //===================================================================================
+    'category.add.success'=>'Category Was Added Successfully',
+    'category.edit.success'=>'Category Was Modified Successfully',
+    'category.delete.success'=>'Category was deleted successfully',
+
 
 ];
