@@ -18,4 +18,13 @@ return [
     'zone.add.success'=>'Zone Was Added Successfully',
     'zone.edit.success'=>'Zone Was Modified Successfully',
     'zone.delete.success'=>'Zone was deleted successfully',
+
+    //===================================================================================
+    // CITIES============================================================================
+    //===================================================================================
+    'city.add.success'=>'City Was Added Successfully',
+    'city.edit.success'=>'City Was Modified Successfully',
+    'city.delete.success'=>'City was deleted successfully',
+
+
 ];
