@@ -28,7 +28,10 @@ class ZoneRepository implements BasicRepositoryInterface
 
     public function update($request, $id)
     {
-        // TODO: Implement create() method.
+        $zone = Zone::findOrFail($id);
+        $zone->setTranslation('name','ar',$request->name_ar);
+        $zone->setTranslation('name','en',$request->name_en);
+        $zone->save();
     }
 
     public function delete($id)

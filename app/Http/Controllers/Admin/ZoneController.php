@@ -58,9 +58,10 @@ class ZoneController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ZoneRequest $request)
     {
-        //
+        $this->zoneRepository->update($request,$request->id);
+        return redirect()->back()->with('edit-success',__('success_messages.zone.edit.success'));
     }
 
     /**
