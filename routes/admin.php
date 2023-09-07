@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\ZoneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +16,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->group(function (){
-    Route::middleware(['auth:admin'])->group(function (){
-        Route::get('/',function (){return view('admin.dashboard');})->name('dashboard');
+Route::prefix('admin')->group(function () {
+    Route::middleware(['auth:admin'])->group(function () {
+    //Dashboard
+        Route::get('/', function () {
+            return view('admin.dashboard');
+        })->name('dashboard');
+
+        //Auth
         Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
 
+        //Zone
+        Route::resource('zones',ZoneController::class);
     });
+
+    //Auth:guest
     Route::middleware('guest:admin')->group(function () {
         Route::get('login', [AuthenticatedSessionController::class, 'create'])
             ->name('admin.login');
