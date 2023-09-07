@@ -38,7 +38,7 @@ Route::prefix('admin')->group(function () {
         //Category Type
         Route::resource('category/types',CategoryTypeController::class)->except(['create','show','edit']);
 
-        //Category]
+        //Category
         Route::resource('categories',CategoryController::class)->except(['create','show','edit']);
     });
 
