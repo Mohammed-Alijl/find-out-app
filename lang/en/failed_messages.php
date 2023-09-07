@@ -44,11 +44,10 @@ return [
     // CATEGORY==========================================================================
     //===================================================================================
     'category.delete.failed'=>'The Category Is In Use',
+    'category.parent_category_id.exists'=>'Please Select Parent Category Just From The Selected Box',
     'category.name_ar.required'=>'Please Enter The Arabic Category Name',
     'category.name_ar.max'=>'The Arabic Category Name Is Too Long',
     'category.name_en.required'=>'Please Enter The English Category Name',
     'category.name_en.max'=>'The English Category Name Is Too Long',
     'category.category_type_id.required'=>'Please Select A Category From Category Selected Box',
-
-
 ];

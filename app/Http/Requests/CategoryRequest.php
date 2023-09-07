@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
         return [
             'name_ar'=>'required|string|max:50',
             'name_en'=>'required|string|max:50',
-            'category_type_id'=>'required|integer|exists:category_types,id'
+            'parent_category_id'=>'integer|exists:categories,id',
         ];
     }
 
@@ -38,6 +38,8 @@ class CategoryRequest extends FormRequest
             'category_type_id.required'=>__('failed_messages.category.category_type_id.required'),
             'category_type_id.integer'=>__('failed_messages.category.category_type_id.required'),
             'category_type_id.exists'=>__('failed_messages.category.category_type_id.required'),
+            'parent_category_id.exists'=>__('failed_messages.category.parent_category_id.exists'),
+            'parent_category_id.integer'=>__('failed_messages.category.parent_category_id.exists'),
         ];
     }
 }

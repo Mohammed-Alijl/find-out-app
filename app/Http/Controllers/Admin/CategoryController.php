@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CategoryTypeRepository;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $this->categoryRepository->create($request);
         return redirect()->back()->with('add-success',__('success_message.category.add.success'));
@@ -61,7 +62,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(CategoryRequest $request)
     {
         $this->categoryRepository->update($request,$request->id);
         return redirect()->back()->with('add-success',__('success_message.category.edit.success'));
