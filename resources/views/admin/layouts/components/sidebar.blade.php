@@ -69,7 +69,7 @@
                             </a>
                             <ul id="location" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
                                 <li class="sidebar-item"><a class="sidebar-link"
-                                                            href="#">{{__('admin/layouts/components/sidebar.states')}}</a></li>
+                                                            href="#">{{__('admin/layouts/components/sidebar.zones')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"
                                                             href="#">{{__('admin/layouts/components/sidebar.cites')}}</a></li>
                             </ul>

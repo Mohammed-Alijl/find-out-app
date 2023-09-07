@@ -7,7 +7,7 @@ return [
     'categories' => 'Categories',
     'types' => 'Types',
     'location.management' => 'Location Management',
-    'states' => 'States',
+    'zones' => 'Zones',
     'cites' => 'Cites',
     'services' => 'Services',
     'advertisements' => 'Advertisements',

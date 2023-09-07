@@ -7,7 +7,7 @@ return [
     'categories' => 'الفئات',
     'types' => 'الأنواع',
     'location.management' => 'إدارة الموقع',
-    'states' => 'الولايات',
+    'zones' => 'المناطق',
     'cities' => 'المدن',
     'services' => 'الخدمات',
     'advertisements' => 'الإعلانات',
