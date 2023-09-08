@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->foreignId('zone_id')->constrained();
             $table->foreignId('city_id')->constrained();
+            $table->enum('platform',['android','ios'])->default('android');
             $table->rememberToken();
             $table->timestamps();
         });
