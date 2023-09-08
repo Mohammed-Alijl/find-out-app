@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Nette\Utils\Type;
+use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $fillable = [
         'name',
-        'type_id',
+        'category_type_id',
         'parent_category_id'
     ];
     public $translatable = ['name'];
@@ -20,9 +20,9 @@ class Category extends Model
     //===============================================================
     //========================== RELATIONSHIPS ======================
     //===============================================================
-    public function type()
+    public function categoryType()
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(CategoryType::class);
     }
 
     public function parentCategory(){

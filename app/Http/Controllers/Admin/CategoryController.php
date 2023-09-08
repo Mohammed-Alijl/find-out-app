@@ -19,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = $this->categoryRepository->getAll();
+        $categories = $this->categoryRepository->getParentsCategories();
         $types = $this->categoryTypeRepository->getAll();
         return view('admin.category.index',compact('categories','types'));
     }
@@ -38,7 +38,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $this->categoryRepository->create($request);
-        return redirect()->back()->with('add-success',__('success_message.category.add.success'));
+        return redirect()->back()->with('add-success',__('success_messages.category.add.success'));
     }
 
     /**
@@ -65,7 +65,7 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request)
     {
         $this->categoryRepository->update($request,$request->id);
-        return redirect()->back()->with('add-success',__('success_message.category.edit.success'));
+        return redirect()->back()->with('add-success',__('success_messages.category.edit.success'));
     }
 
     /**
@@ -78,7 +78,7 @@ class CategoryController extends Controller
             return redirect()->back()->with('delete-failed', __('failed_messages.category.delete.failed'));
         }else{
             $this->categoryRepository->delete($id);
-            return redirect()->back()->with('delete-success',__('success_message.category.delete.success'));
+            return redirect()->back()->with('delete-success',__('success_messages.category.delete.success'));
         }
 
     }

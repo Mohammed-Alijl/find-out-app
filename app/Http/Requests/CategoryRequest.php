@@ -25,6 +25,7 @@ class CategoryRequest extends FormRequest
             'name_ar'=>'required|string|max:50',
             'name_en'=>'required|string|max:50',
             'parent_category_id'=>'integer|exists:categories,id',
+            'category_type_id'=>'required|integer|exists:category_types,id',
         ];
     }
 
