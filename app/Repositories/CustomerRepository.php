@@ -47,7 +47,7 @@ class CustomerRepository implements BasicRepositoryInterface
 
     public function delete($id)
     {
-        $zone = User::findOrFail($id);
-        $zone->delete();
+        $customer = User::findOrFail($id);
+        $customer->delete();
     }
 }
