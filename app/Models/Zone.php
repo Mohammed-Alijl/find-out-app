@@ -29,4 +29,8 @@ class Zone extends Model
     public function cities(){
         return $this->hasMany(City::class);
     }
+
+    public function customers(){
+        return $this->hasMany(User::class);
+    }
 }

@@ -20,7 +20,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'mobile_number',
         'password',
+        'zone_id',
+        'city_id',
+        'platform'
     ];
 
     /**
@@ -42,4 +46,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //===============================================================
+    //========================== RELATIONSHIPS ======================
+    //===============================================================
+    public function zone(){
+        return $this->belongsTo(Zone::class);
+    }
+
+    public function city(){
+        return $this->belongsTo(City::class);
+    }
 }

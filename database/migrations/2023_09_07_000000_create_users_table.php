@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('mobile_number')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignId('zone_id')->constrained();
+            $table->foreignId('city_id')->constrained();
             $table->rememberToken();
             $table->timestamps();
         });
