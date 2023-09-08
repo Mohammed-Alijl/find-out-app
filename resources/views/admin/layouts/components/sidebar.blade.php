@@ -123,8 +123,8 @@
                             </ul>
                         </li>
 
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="#">
+                            <li class="sidebar-item {{request()->route()->named(['customers.index','customers.create','customers.edit']) ? 'active' : ''}}">
+                                <a class="sidebar-link" href="{{route('customers.index')}}">
                                     <i class="align-middle me-2" data-feather="users"></i> <span
                                         class="align-middle">{{__('admin/layouts/components/sidebar.customers')}}</span>
                                 </a>

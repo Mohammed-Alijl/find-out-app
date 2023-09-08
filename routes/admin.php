@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CategoryTypeController;
 use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ZoneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,9 @@ Route::prefix('admin')->group(function () {
 
         //Category
         Route::resource('categories',CategoryController::class)->except(['create','edit']);
+
+        //Customer
+        Route::resource('customers',CustomerController::class)->except(['show']);
     });
 
     //Auth:guest

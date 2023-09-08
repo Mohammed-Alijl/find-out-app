@@ -40,5 +40,12 @@ return [
     'category.edit.success'=>'Category Was Modified Successfully',
     'category.delete.success'=>'Category was deleted successfully',
 
+    //===================================================================================
+    // CUSTOMER==========================================================================
+    //===================================================================================
+    'customer.add.success'=>'Customer Was Added Successfully',
+    'customer.edit.success'=>'Customer Was Modified Successfully',
+    'customer.delete.success'=>'Customer was deleted successfully',
+
 
 ];
