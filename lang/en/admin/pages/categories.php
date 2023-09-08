@@ -23,4 +23,7 @@ return [
     'category.add' => 'Category Added',
     'category.edit' => 'Category Edited',
     'category.cannot.delete' => 'Category Is In Use',
+    'add.nested.category' => 'Add Nested Category',
+    'parent.category' => 'Parent Category',
+    'category' => 'Category',
 ];

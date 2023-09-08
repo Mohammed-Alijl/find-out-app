@@ -46,9 +46,11 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $this->categoryRepository->find($id);
+        $parentCategory = $this->categoryRepository->find($id);
         $categories = $this->categoryRepository->getChildCategories($id);
-        return view('admin.categories.show', compact('categories','id'));
+        $types = $this->categoryTypeRepository->getAll();
+        $parentsCategories = $this->categoryRepository->getNonChildCategory($id);
+        return view('admin.category.show', compact('categories','parentCategory','types','parentsCategories'));
     }
 
     /**
@@ -65,7 +67,7 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request)
     {
         $this->categoryRepository->update($request,$request->id);
-        return redirect()->back()->with('add-success',__('success_messages.category.edit.success'));
+        return redirect()->back()->with('edit-success',__('success_messages.category.edit.success'));
     }
 
     /**
