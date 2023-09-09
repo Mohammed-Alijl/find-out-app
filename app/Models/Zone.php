@@ -33,4 +33,8 @@ class Zone extends Model
     public function customers(){
         return $this->hasMany(User::class);
     }
+
+    public function services(){
+        return $this->belongsToMany(Service::class);
+    }
 }
