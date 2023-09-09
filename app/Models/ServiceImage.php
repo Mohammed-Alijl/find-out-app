@@ -10,7 +10,7 @@ class ServiceImage extends Model
     use HasFactory;
     protected $fillable = [
         'service_id',
-        'name'
+        'path'
     ];
 
     //===============================================================
