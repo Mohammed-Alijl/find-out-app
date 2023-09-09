@@ -69,4 +69,26 @@ return [
     'customer.city_id.required' => 'Please Select A Valid City',
     'customer.platform.required' => 'Please Select The Platform',
     'customer.platform.in' => 'Please Select The Platform',
+
+
+    //===================================================================================
+    // SERVICE===========================================================================
+    //===================================================================================
+    'service.name.required' => 'Please Enter The Name Of Service',
+    'service.name.max' => 'The Name Of Service Is Too Long',
+    'service.start_at.date_format' => 'Please Enter A Valid Start Time',
+    'service.end_at.date_format' => 'Please Enter A Valid End Time',
+    'service.facebook_link.regex' => 'The Facebook Link Is Invalid',
+    'service.instagram_link.regex' => 'The Instagram Link Is Invalid',
+    'service.twitter_link.regex' => 'The Twitter Link Is Invalid',
+    'service.category_id.required' => 'Please Select The Parent Category',
+    'service.images.required' => 'Please Enter At Least One Image',
+    'service.images.*.image' => 'Please Send Just Images',
+    'service.images.*.mimes' => 'The Image Should be: jpg, png, svg, jpeg',
+    'service.images.*.max' => 'The Image Size Is Too Big',
+    'service.zone_id.required' => 'Please Select One Zone At Least',
+    'service.city_id.required' => 'Please Select One City At Least',
+    'service.city_id.size' => 'You Should Enter A Mobile Number For All City',
+    'service.mobile_number.required' => 'Please Enter One Mobile Number At Least',
+    'service.mobile_number.size' => 'You Should Enter A Mobile Number For All City',
 ];
