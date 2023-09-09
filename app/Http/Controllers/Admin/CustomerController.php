@@ -57,7 +57,7 @@ class CustomerController extends Controller
     {
         $customer = $this->customerRepository->find($id);
         $zones = $this->zoneRepository->getAll();
-        return view('admin.customer.create',compact('customer','zones'));
+        return view('admin.customer.edit',compact('customer','zones'));
     }
 
     /**

@@ -23,9 +23,9 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email, ' . $this->id,
-            'mobile_number' => 'required|string|max:15|unique:users,mobile_number, ' . $this->id,
-            'password' => 'string|min:8|max:255|confirmed',
+            'email' => 'required|email|unique:users,email, ' . $this->route('customer'),
+            'mobile_number' => 'required|string|max:15|unique:users,mobile_number, ' . $this->route('customer'),
+            'password' => 'nullable|string|min:8|max:255|confirmed',
             'zone_id' => 'required|integer|exists:zones,id',
             'city_id' => 'required|integer|exists:cities,id',
             'platform' => 'required|string|in:android,ios',

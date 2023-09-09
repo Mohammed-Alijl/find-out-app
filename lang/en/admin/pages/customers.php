@@ -33,4 +33,7 @@ return [
     'add' => 'Add',
     'email.in.used' => 'This email is already in use.',
     'mobile_number.in.used' => 'This mobile number is already in use.',
+    'edit.title' => 'Edit Customer',
+    'edit.description' => 'Edit Customer From Here!',
+    'edit' => 'Edit',
 ];
