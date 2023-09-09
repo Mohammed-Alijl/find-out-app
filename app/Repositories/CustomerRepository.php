@@ -50,4 +50,11 @@ class CustomerRepository implements BasicRepositoryInterface
         $customer = User::findOrFail($id);
         $customer->delete();
     }
+
+    public function checkEmail($email){
+        return User::where('email', $email)->exists();
+    }
+    public function checkMobile($mobile_number){
+        return User::where('mobile_number', $mobile_number)->exists();
+    }
 }

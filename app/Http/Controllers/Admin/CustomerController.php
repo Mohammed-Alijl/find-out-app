@@ -7,6 +7,7 @@ use App\Http\Requests\Customer\StoreRequest;
 use App\Http\Requests\Customer\UpdateRequest;
 use App\Repositories\CustomerRepository;
 use App\Repositories\ZoneRepository;
+use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
@@ -76,4 +77,24 @@ class CustomerController extends Controller
         $this->customerRepository->delete($id);
         return redirect()->route('customers.index')->with('delete-success',__('success_messages.customer.delete.success'));
     }
+
+    public function checkEmail(Request $request)
+    {
+        $email = $request->input('email');
+
+        $exists = $this->customerRepository->checkEmail($email);
+
+        return response()->json(['exists' => $exists]);
+    }
+
+    public function checkMobile(Request $request)
+    {
+        $mobile_number = $request->input('mobile_number');
+
+        $exists = $this->customerRepository->checkMobile($mobile_number);
+
+        return response()->json(['exists' => $exists]);
+    }
+
+
 }

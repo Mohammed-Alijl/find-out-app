@@ -32,6 +32,7 @@ Route::prefix('admin')->group(function () {
 
         //Zone
         Route::resource('zones',ZoneController::class)->except(['create','show','edit']);
+        Route::get('zone-cities/{id}', [ZoneController::class, 'getZoneCities']);
 
         //City
         Route::resource('cities',CityController::class)->except(['create','show','edit']);
@@ -44,6 +45,8 @@ Route::prefix('admin')->group(function () {
 
         //Customer
         Route::resource('customers',CustomerController::class)->except(['show']);
+        Route::post('/check-email', [CustomerController::class, 'checkEmail'])->name('check-email');
+        Route::post('/check-mobile', [CustomerController::class, 'checkMobile'])->name('check-mobile-number');
     });
 
     //Auth:guest
