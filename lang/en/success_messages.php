@@ -47,5 +47,12 @@ return [
     'customer.edit.success'=>'Customer Was Modified Successfully',
     'customer.delete.success'=>'Customer was deleted successfully',
 
+    //===================================================================================
+    // SERVICE===========================================================================
+    //===================================================================================
+    'service.add.success'=>'Service Was Added Successfully',
+    'service.edit.success'=>'Service Was Modified Successfully',
+    'service.delete.success'=>'Service was deleted successfully',
+
 
 ];

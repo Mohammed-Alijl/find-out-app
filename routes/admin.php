@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CategoryTypeController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ZoneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,10 @@ Route::prefix('admin')->group(function () {
         Route::resource('customers',CustomerController::class)->except(['show']);
         Route::post('/check-email', [CustomerController::class, 'checkEmail'])->name('check-email');
         Route::post('/check-mobile', [CustomerController::class, 'checkMobile'])->name('check-mobile-number');
+
+        //Service
+        Route::resource('services',ServiceController::class);
+
     });
 
     //Auth:guest
