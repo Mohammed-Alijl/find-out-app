@@ -47,7 +47,8 @@ class ServiceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $service = $this->serviceRepository->find($id);
+        return view('admin.service.show',compact('service'));
     }
 
     /**

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('instagram_link')->nullable();
             $table->string('twitter_link')->nullable();
             $table->foreignId('category_id')->constrained()->cascadeOnUpdate();
+            $table->foreignId('sub_category_id')->nullable()->constrained('categories')->cascadeOnUpdate();
             $table->boolean('fixing_place')->default(0);
             $table->text('details')->nullable();
             $table->timestamps();

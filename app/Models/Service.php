@@ -17,6 +17,7 @@ class Service extends Model
       'instagram_link',
       'twitter_link',
       'category_id',
+      'sub_category_id',
       'fixing_place',
       'details',
     ];
@@ -40,5 +41,9 @@ class Service extends Model
 
     public function cities(){
         return $this->belongsToMany(City::class);
+    }
+
+    public function subCategory(){
+        return $this->belongsTo(Category::class,'sub_category_id');
     }
 }

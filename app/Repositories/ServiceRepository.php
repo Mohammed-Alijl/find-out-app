@@ -24,6 +24,8 @@ class ServiceRepository implements BasicRepositoryInterface
         //Create The Service
         $service = new Service();
         $service->name = $request->name;
+        $service->category_id = $request->category_id;
+
         if ($request->filled('start_at')) {
             $service->start_at = $request->start_at;
             $service->end_at = $request->end_at;
@@ -34,11 +36,12 @@ class ServiceRepository implements BasicRepositoryInterface
             $service->instagram_link = $request->instagram_link;
         if ($request->filled('twitter_link'))
             $service->twitter_link = $request->twitter_link;
-        $service->category_id = $request->category_id;
         if ($request->filled('fixing_place'))
             $service->fixing_place = $request->fixing_place;
         if ($request->filled('details'))
             $service->details = $request->details;
+        if ($request->filled('sub_category_id'))
+            $service->sub_category_id = $request->sub_category_id;
         $service->save();
 
         //Create The Services Images
@@ -95,6 +98,11 @@ class ServiceRepository implements BasicRepositoryInterface
             $service->details = $request->details;
         else
             $service->details = '';
+
+        if ($request->filled('sub_category_id'))
+            $service->sub_category_id = $request->sub_category_id;
+        else
+            $service->sub_category_id = '';
 
         $service->save();
 
