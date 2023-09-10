@@ -26,8 +26,8 @@ class StoreRequest extends FormRequest
 
         return [
             'name' => 'required|string|max:255',
-            'start_at' => 'nullable|date_format:H:i',
-            'end_at' => 'nullable|date_format:H:i|after:start_at',
+            'start_at' => 'nullable|date_format:H:i|required_with:end_at',
+            'end_at' => 'nullable|date_format:H:i|after:start_at|required_with:start_at',
             'facebook_link' => ['nullable',Rule::regex('/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/'),],
             'instagram_link' => ['nullable',Rule::regex('/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/'),],
             'twitter_link' => ['nullable',Rule::regex('/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/'),],

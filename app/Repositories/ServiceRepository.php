@@ -24,14 +24,21 @@ class ServiceRepository implements BasicRepositoryInterface
         //Create The Service
         $service = new Service();
         $service->name = $request->name;
-        $service->start_at = $request->start_at;
-        $service->end_at = $request->end_at;
-        $service->facebook_link = $request->facebook_link;
-        $service->instagram_link = $request->instagram_link;
-        $service->twitter_link = $request->twitter_link;
+        if ($request->filled('start_at')) {
+            $service->start_at = $request->start_at;
+            $service->end_at = $request->end_at;
+        }
+        if ($request->filled('facebook_link'))
+            $service->facebook_link = $request->facebook_link;
+        if ($request->filled('instagram_link'))
+            $service->instagram_link = $request->instagram_link;
+        if ($request->filled('twitter_link'))
+            $service->twitter_link = $request->twitter_link;
         $service->category_id = $request->category_id;
-        $service->fixing_place = $request->fixing_place;
-        $service->details = $request->details;
+        if ($request->filled('fixing_place'))
+            $service->fixing_place = $request->fixing_place;
+        if ($request->filled('details'))
+            $service->details = $request->details;
         $service->save();
 
         //Create The Services Images
@@ -56,16 +63,39 @@ class ServiceRepository implements BasicRepositoryInterface
 
     public function update($request, $id)
     {
-        $service = Service::findOrFail($id);
+        $service = new Service();
         $service->name = $request->name;
-        $service->start_at = $request->start_at;
-        $service->end_at = $request->end_at;
-        $service->facebook_link = $request->facebook_link;
-        $service->instagram_link = $request->instagram_link;
-        $service->twitter_link = $request->twitter_link;
+        if ($request->filled('start_at')) {
+            $service->start_at = $request->start_at;
+            $service->end_at = $request->end_at;
+        }else{
+            $service->start_at = '';
+            $service->end_at = '';
+        }
+        if ($request->filled('facebook_link'))
+            $service->facebook_link = $request->facebook_link;
+        else
+            $service->facebook_link = '';
+
+        if ($request->filled('instagram_link'))
+            $service->instagram_link = $request->instagram_link;
+        else
+            $service->instagram_link = '';
+
+        if ($request->filled('twitter_link'))
+            $service->twitter_link = $request->twitter_link;
+        else
+            $service->twitter_link = '';
+
         $service->category_id = $request->category_id;
-        $service->fixing_place = $request->fixing_place;
-        $service->details = $request->details;
+        if ($request->filled('fixing_place'))
+            $service->fixing_place = $request->fixing_place;
+
+        if ($request->filled('details'))
+            $service->details = $request->details;
+        else
+            $service->details = '';
+
         $service->save();
 
         //Update The Service Images
