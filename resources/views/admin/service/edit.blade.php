@@ -530,6 +530,9 @@
                 buttonContainer.appendChild(document.createElement('br'))
                 buttonContainer.appendChild(deleteButton);
                 row.appendChild(buttonContainer);
+
+                const initialZoneSelect = row.querySelector(`#inputZone${rowsNumber}`);
+                updateCityOptions(initialZoneSelect.value, row);
                 return row;
             }
 

@@ -108,7 +108,7 @@
                                     <div class="mb-6 col-md-12">
                                         <label class="form-label"
                                                for="details">{{__('admin/pages/services.details')}}</label>
-                                        <textarea name="details" id="details" style="width: 100%; height: 100%"></textarea>
+                                        <textarea name="details" class="form-control" id="details" style="width: 100%; height: 100%"></textarea>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -408,6 +408,9 @@
                 buttonContainer.appendChild(document.createElement('br'))
                 buttonContainer.appendChild(deleteButton);
                 row.appendChild(buttonContainer);
+
+                const initialZoneSelect = row.querySelector(`#inputZone${rowsNumber}`);
+                updateCityOptions(initialZoneSelect.value, row);
                 return row;
             }
 
