@@ -10,14 +10,14 @@ class AdvertisementImage extends Model
     use HasFactory;
 
     protected $fillable = [
-        'service_id',
+        'advertisement_id',
         'path'
     ];
 
     //===============================================================
     //========================== RELATIONSHIPS ======================
     //===============================================================
-    public function service(){
-        return $this->belongsTo(Service::class);
+    public function advertisement(){
+        return $this->belongsTo(Advertisement::class);
     }
 }
