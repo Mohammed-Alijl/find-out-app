@@ -118,7 +118,7 @@
                                     <div class="mb-6 col-md-12">
                                         <label class="form-label"
                                                for="details">{{__('admin/pages/services.details')}}</label>
-                                        <textarea name="details" id="details"
+                                        <textarea class="form-control" name="details" id="details"
                                                   style="width: 100%; height: 100%">{{$service->details}}</textarea>
                                     </div>
                                 </div>
@@ -199,14 +199,14 @@
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label"
                                                for="start_at">{{__('admin/pages/services.start_at')}}</label>
-                                        <input type="text" id="start_at" class="form-control start_at"
+                                        <input type="text" id="start_at" class="form-control start_at" name="start_at"
                                                placeholder="{{__('admin/pages/services.set.time')}}"
                                                value="{{$service->start_at}}"/>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label"
                                                for="end_at">{{__('admin/pages/services.end_at')}}</label>
-                                        <input type="text" id="end_at" class="form-control end_at"
+                                        <input type="text" id="end_at" class="form-control end_at" name="end_at"
                                                placeholder="{{__('admin/pages/services.set.time')}}"
                                                value="{{$service->end_at}}"/>
                                     </div>
@@ -241,7 +241,7 @@
                                                 required>
                                             @foreach($zones as $zone)
                                                 <option
-                                                    value="{{$zone->id}}" {{$zone->id ==  $service->zones->first()->id ? 'selected' : ''}}>{{$zone->name}}</option>
+                                                    value="{{$zone->id}}" {{$zone->id ==  $service->cities->first()->zone->id ? 'selected' : ''}}>{{$zone->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -261,7 +261,7 @@
                                             <span style="color:red">*</span></label>
                                         <input type="text" id="inputMobileNumber" class="form-control"
                                                name="mobile_number[]" pattern="[0-9]{8,15}" maxlength="15"
-                                               value="{{\Illuminate\Support\Facades\DB::table('city_service')->select('mobile_number')->first()->mobile_number}}"
+                                               value="{{$service->cities->first()->pivot->mobile_number}}"
                                                required
                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                                autocomplete="off">
@@ -271,18 +271,18 @@
                                     </div>
                                 </div>
                                 <br>
-                                @foreach($service->zones as $index => $row)
+                                @foreach($service->cities as $index => $city)
                                     <div class="row">
                                         @if ($loop->first)
                                             @continue
                                         @endif
                                         <div class="mb-3 col-md-3">
-                                            <label for="" class="form-label">{{__('admin/pages/services.zone')}} <span
+                                            <label for="inputZone_{{$city->zone->id}}" class="form-label">{{__('admin/pages/services.zone')}} <span
                                                     style="color: red">*</span></label>
-                                            <select class="form-control" id="inputZone_{{$row->id}}" name="zone_id[]">
+                                            <select class="form-control" id="inputZone_{{$city->zone->id}}" name="zone_id[]">
                                                 @foreach($zones as $zone)
                                                     <option
-                                                        value="{{$zone->id}}" {{$zone->id ==  $row->id ? 'selected' : ''}}>{{$zone->name}}</option>
+                                                        value="{{$zone->id}}" {{$zone->id ==  $city->zone->id ? 'selected' : ''}}>{{$zone->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -290,9 +290,9 @@
                                             <label for="" class="form-label">{{__('admin/pages/services.city')}} <span
                                                     style="color: red">*</span></label>
                                             <select class="form-control" id="" name="city_id[]">
-                                                @foreach($row->cities as $city)
+                                                @foreach($city->zone->cities as $zoneCity)
                                                     <option
-                                                        value="{{$city->id}}" {{$service->cities->skip($index)->take(1)->first()->id}}>{{$city->name}}</option>
+                                                        value="{{$zoneCity->id}}" {{$city->id == $zoneCity->id ? 'selected' : ''}}>{{$city->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -302,7 +302,7 @@
                                                     style="color: red">*</span></label>
                                             <input type="text" id="inputMobileNumber" class="form-control"
                                                    name="mobile_number[]" pattern="[0-9]{8,15}" maxlength="15"
-                                                   value="{{\Illuminate\Support\Facades\DB::table('city_service')->select('mobile_number')->skip(++$index)->take(1)->first()->mobile_number}}"
+                                                   value="{{$city->pivot->mobile_number}}"
                                                    required
                                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                                    autocomplete="off">

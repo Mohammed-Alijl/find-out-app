@@ -67,15 +67,15 @@ class ServiceRepository implements BasicRepositoryInterface
 
     public function update($request, $id)
     {
-        $service = new Service();
+        $service = $this->find($id);
         $service->setTranslation('name','ar',$request->name_ar);
         $service->setTranslation('name','en',$request->name_en);
         if ($request->filled('start_at')) {
             $service->start_at = $request->start_at;
             $service->end_at = $request->end_at;
         }else{
-            $service->start_at = '';
-            $service->end_at = '';
+            $service->start_at = null;
+            $service->end_at = null;
         }
         if ($request->filled('facebook_link'))
             $service->facebook_link = $request->facebook_link;
@@ -93,6 +93,7 @@ class ServiceRepository implements BasicRepositoryInterface
             $service->twitter_link = '';
 
         $service->category_id = $request->category_id;
+
         if ($request->filled('fixing_place'))
             $service->fixing_place = $request->fixing_place;
 
@@ -104,7 +105,7 @@ class ServiceRepository implements BasicRepositoryInterface
         if ($request->filled('sub_category_id'))
             $service->sub_category_id = $request->sub_category_id;
         else
-            $service->sub_category_id = '';
+            $service->sub_category_id = null;
 
         $service->save();
 
@@ -121,7 +122,7 @@ class ServiceRepository implements BasicRepositoryInterface
                 $image->path = $path;
                 $image->save();
             }
-
+        }
             //Update Detected Zones
             $service->zones()->sync($request->zone_id);
 
@@ -132,7 +133,7 @@ class ServiceRepository implements BasicRepositoryInterface
                 $service->cities()->attach($cityId, ['mobile_number' => $mobileNumber]);
             }
 
-        }
+
     }
 
     public function delete($id)
