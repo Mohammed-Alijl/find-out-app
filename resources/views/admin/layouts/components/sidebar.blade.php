@@ -75,8 +75,8 @@
                             </ul>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link {{request()->route()->named(['services.index','services.create','services.edit']) ? 'active' : ''}}" href="{{route('services.index')}}">
+                        <li class="sidebar-item {{request()->route()->named(['services.index','services.create','services.edit']) ? 'active' : ''}}">
+                            <a class="sidebar-link" href="{{route('services.index')}}">
                                 <i class="fas fa-star"></i>
                                 <span
                                     class="align-middle">{{__('admin/layouts/components/sidebar.services')}}</span>
