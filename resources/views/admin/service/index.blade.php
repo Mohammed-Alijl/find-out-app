@@ -45,7 +45,11 @@
                     <tr>
                         <td>{{$rowNumber++}}</td>
 
-                        <td>{{ $service->name }}</td>
+                        <td>
+                            <a href="{{route('services.show',$service->id)}}">
+                                {{ $service->name }}
+                            </a>
+                        </td>
                         <td>{{ $service->category->name }}</td>
                         <td>{{ $service->subCategory ? $service->subCategory->name : '' }}</td>
                         <td>

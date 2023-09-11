@@ -32,4 +32,5 @@ return [
   'mobile_number' => 'Mobile Number',
   'mobile_number.invalid' => 'Please Enter Valid Mobile Number',
   'edit.service' => 'Edit Service',
+  'show.service' => 'Display Service',
 ];

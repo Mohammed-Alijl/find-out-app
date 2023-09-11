@@ -75,7 +75,7 @@
                             </ul>
                         </li>
 
-                        <li class="sidebar-item {{request()->route()->named(['services.index','services.create','services.edit']) ? 'active' : ''}}">
+                        <li class="sidebar-item {{request()->route()->named(['services.index','services.create','services.edit','services.show']) ? 'active' : ''}}">
                             <a class="sidebar-link" href="{{route('services.index')}}">
                                 <i class="fas fa-star"></i>
                                 <span
