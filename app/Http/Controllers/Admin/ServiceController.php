@@ -62,7 +62,8 @@ class ServiceController extends Controller
     {
         $service = $this->serviceRepository->find($id);
         $categories = $this->categoryRepository->getAll();
-        return view('admin.service.create',compact('categories','service'));
+        $zones = $this->zoneRepository->getAll();
+        return view('admin.service.edit',compact('categories','service','zones'));
     }
 
     /**
