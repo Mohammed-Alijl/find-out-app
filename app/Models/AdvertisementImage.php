@@ -4,26 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 
-class CategoryType extends Model
+class AdvertisementImage extends Model
 {
-    use HasFactory, HasTranslations;
+    use HasFactory;
 
     protected $fillable = [
-        'name'
+        'service_id',
+        'path'
     ];
-    public $translatable = ['name'];
 
     //===============================================================
     //========================== RELATIONSHIPS ======================
     //===============================================================
-    public function categories()
-    {
-        return $this->hasMany(Category::class);
-    }
-
-    public function advertisements(){
-        return $this->hasMany(Advertisement::class);
+    public function service(){
+        return $this->belongsTo(Service::class);
     }
 }

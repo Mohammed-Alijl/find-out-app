@@ -28,4 +28,8 @@ class City extends Model
     public function services(){
         return $this->belongsToMany(Service::class);
     }
+
+    public function advertisements(){
+        return $this->hasMany(Advertisement::class);
+    }
 }
