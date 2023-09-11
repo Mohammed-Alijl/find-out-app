@@ -91,4 +91,24 @@ return [
     'service.city_id.size' => 'You Should Enter A Mobile Number For All City',
     'service.mobile_number.required' => 'Please Enter One Mobile Number At Least',
     'service.mobile_number.size' => 'You Should Enter A Mobile Number For All City',
+
+
+    //===================================================================================
+    // ADVERTISEMENTS====================================================================
+    //===================================================================================
+    'advertisement.name_ar.required' => 'The Arabic Name of Advertisement Is Required',
+    'advertisement.name_ar.max' => 'The Arabic Name of Advertisement Is Too Long',
+    'advertisement.name_en.required' => 'The English Name of Advertisement Is Required',
+    'advertisement.name_en.max' => 'The English Name of Advertisement Is Too Long',
+    'advertisement.category_type_id.required' => 'Please Select The Category Type',
+    'advertisement.category_type_id.integer' => 'Please Select The Category Type',
+    'advertisement.category_type_id.exists' => 'Please Select The Category Type',
+    'advertisement.service_id.required' => 'Please Select The Service',
+    'advertisement.service_id.integer' => 'Please Select The Service',
+    'advertisement.service_id.exists' => 'Please Select The Service',
+    'advertisement.display_place.required' => 'Please Select Display Place Service',
+    'advertisement.display_place.in' => 'Please Select The Service',
+    'advertisement.city_id.integer' => 'Please Select The City From The City Selected Box',
+    'advertisement.city_id.exists' => 'Please Select The City From The City Selected Box',
+    'advertisement.city_id.required_if' => 'When You Select The Display Place [City, Both] You Should Select The City',
 ];

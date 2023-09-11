@@ -71,4 +71,45 @@ return [
     'customer.platform.required' => 'الرجاء اختيار منصة صالحة',
     'customer.platform.in' => 'الرجاء اختيار منصة صالحة',
 
+
+    //===================================================================================
+    // SERVICE===========================================================================
+    //===================================================================================
+    'service.name.required' => 'الرجاء إدخال اسم الخدمة',
+    'service.name.max' => 'اسم الخدمة طويل جداً',
+    'service.start_at.date_format' => 'الرجاء إدخال وقت بداية صحيح',
+    'service.end_at.date_format' => 'الرجاء إدخال وقت نهاية صحيح',
+    'service.facebook_link.regex' => 'رابط الفيسبوك غير صالح',
+    'service.instagram_link.regex' => 'رابط الإنستجرام غير صالح',
+    'service.twitter_link.regex' => 'رابط تويتر غير صالح',
+    'service.category_id.required' => 'الرجاء اختيار الفئة الرئيسية',
+    'service.images.required' => 'الرجاء إدخال صورة واحدة على الأقل',
+    'service.images.*.image' => 'الرجاء إرسال صور فقط',
+    'service.images.*.mimes' => 'يجب أن تكون الصورة من الأنواع: jpg, png, svg, jpeg',
+    'service.images.*.max' => 'حجم الصورة كبير جداً',
+    'service.zone_id.required' => 'الرجاء اختيار منطقة واحدة على الأقل',
+    'service.city_id.required' => 'الرجاء اختيار مدينة واحدة على الأقل',
+    'service.city_id.size' => 'يجب إدخال رقم هاتف محمول لجميع المدن',
+    'service.mobile_number.required' => 'الرجاء إدخال رقم هاتف محمول واحد على الأقل',
+    'service.mobile_number.size' => 'يجب إدخال رقم هاتف محمول لجميع المدن',
+
+
+    //===================================================================================
+    // ADVERTISEMENTS====================================================================
+    //===================================================================================
+    'advertisement.name_ar.required' => 'الاسم العربي للإعلان مطلوب',
+    'advertisement.name_ar.max' => 'الاسم العربي للإعلان طويل جداً',
+    'advertisement.name_en.required' => 'الاسم الإنجليزي للإعلان مطلوب',
+    'advertisement.name_en.max' => 'الاسم الإنجليزي للإعلان طويل جداً',
+    'advertisement.category_type_id.required' => 'الرجاء اختيار نوع الفئة',
+    'advertisement.category_type_id.integer' => 'الرجاء اختيار نوع الفئة',
+    'advertisement.category_type_id.exists' => 'الرجاء اختيار نوع الفئة',
+    'advertisement.service_id.required' => 'الرجاء اختيار الخدمة',
+    'advertisement.service_id.integer' => 'الرجاء اختيار الخدمة',
+    'advertisement.service_id.exists' => 'الرجاء اختيار الخدمة',
+    'advertisement.display_place.required' => 'الرجاء اختيار مكان العرض للإعلان',
+    'advertisement.display_place.in' => 'الرجاء اختيار الخدمة',
+    'advertisement.city_id.integer' => 'الرجاء اختيار المدينة من صندوق الاختيار المخصص للمدن',
+    'advertisement.city_id.exists' => 'الرجاء اختيار المدينة من صندوق الاختيار المخصص للمدن',
+    'advertisement.city_id.required_if' => 'عند اختيار مكان العرض في المدينة او في كلا الصفحة الرئيسية و المدينة معا يجب عليك اختيار المدينة',
 ];
