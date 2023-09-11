@@ -175,12 +175,12 @@
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label"
                                                for="start_at">{{__('admin/pages/services.start_at')}}</label>
-                                        <input type="text" id="start_at" class="form-control start_at" placeholder="{{__('admin/pages/services.set.time')}}" />
+                                        <input type="text" id="start_at" class="form-control start_at" placeholder="{{__('admin/pages/services.set.time')}}" name="start_at"/>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label"
                                                for="end_at">{{__('admin/pages/services.end_at')}}</label>
-                                        <input type="text" id="end_at" class="form-control end_at" placeholder="{{__('admin/pages/services.set.time')}}" />
+                                        <input type="text" id="end_at" class="form-control end_at" placeholder="{{__('admin/pages/services.set.time')}}" name="end_at"/>
                                     </div>
                                 </div>
                                 <input id="input-b3" name="images[]" type="file" class="file" multiple required

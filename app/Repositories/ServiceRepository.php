@@ -54,7 +54,7 @@ class ServiceRepository implements BasicRepositoryInterface
             $image->save();
         }
         //Detected The Zones Of Services
-        $service->zones()->attach($request->zone_id);
+        $service->zones()->sync($request->zone_id);
 
         //Detected The Cities Of Services
         foreach ($request->city_id as $index => $cityId) {
