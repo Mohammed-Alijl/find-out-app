@@ -25,12 +25,13 @@ class StoreRequest extends FormRequest
         $cityCount = count($this->city_id);
 
         return [
-            'name' => 'required|string|max:255',
+            'name_ar' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
             'start_at' => 'nullable|date_format:H:i|required_with:end_at',
             'end_at' => 'nullable|date_format:H:i|after:start_at|required_with:start_at',
-            'facebook_link' => ['nullable',Rule::regex('/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/'),],
-            'instagram_link' => ['nullable',Rule::regex('/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/'),],
-            'twitter_link' => ['nullable',Rule::regex('/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/'),],
+            'facebook_link' => ['nullable','regex:/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/',],
+            'instagram_link' => ['nullable','regex:/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/',],
+            'twitter_link' => ['nullable','regex:/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/',],
             'category_id' => 'required|integer|exists:categories,id',
             'sub_category_id' => 'nullable|integer|exists:categories,id',
             'fixing_place' => 'boolean',
@@ -41,16 +42,18 @@ class StoreRequest extends FormRequest
             'zone_id.*'=>'integer|exists:zones,id',
             'city_id'=>'array|required|size:' . $cityCount,
             'city_id.*'=>'integer|exists:cities,id',
-            'mobile_number'=>'array|required',
-            'mobile_number.*'=>'string|regex:/\d{8,15}/|size:' . $cityCount,
+            'mobile_number'=>'array|required|size:' . $cityCount,
+            'mobile_number.*'=>'string|regex:/\d{8,15}/',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => __('failed_message.service.name.required'),
-            'name.max' => __('failed_message.service.name.max'),
+            'name_ar.required' => __('failed_message.service.name.required'),
+            'name_en.required' => __('failed_message.service.name.required'),
+            'name_ar.max' => __('failed_message.service.name.max'),
+            'name_en.max' => __('failed_message.service.name.max'),
             'start_at.date_format' => __('failed_message.service.start_at.date_format'),
             'end_at.date_format' => __('failed_message.service.end_at.date_format'),
             'facebook_link.regex' => __('failed_message.service.facebook_link.regex'),

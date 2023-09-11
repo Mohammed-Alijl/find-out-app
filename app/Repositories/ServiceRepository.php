@@ -23,7 +23,8 @@ class ServiceRepository implements BasicRepositoryInterface
     {
         //Create The Service
         $service = new Service();
-        $service->name = $request->name;
+        $service->setTranslation('name','ar',$request->name_ar);
+        $service->setTranslation('name','en',$request->name_en);
         $service->category_id = $request->category_id;
 
         if ($request->filled('start_at')) {
@@ -45,7 +46,7 @@ class ServiceRepository implements BasicRepositoryInterface
         $service->save();
 
         //Create The Services Images
-        foreach ($request->file('image') as $image) {
+        foreach ($request->file('images') as $image) {
             $path = $image->store('services', 'image');
             $image = new ServiceImage();
             $image->service_id = $service->id;
@@ -67,7 +68,8 @@ class ServiceRepository implements BasicRepositoryInterface
     public function update($request, $id)
     {
         $service = new Service();
-        $service->name = $request->name;
+        $service->setTranslation('name','ar',$request->name_ar);
+        $service->setTranslation('name','en',$request->name_en);
         if ($request->filled('start_at')) {
             $service->start_at = $request->start_at;
             $service->end_at = $request->end_at;

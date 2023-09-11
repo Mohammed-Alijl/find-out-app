@@ -84,4 +84,9 @@ class CategoryController extends Controller
         }
 
     }
+
+    public function getSubCategories($id){
+        $subCategories = $this->categoryRepository->getChildCategories($id)->pluck('name', 'id');
+        return json_encode($subCategories);
+    }
 }

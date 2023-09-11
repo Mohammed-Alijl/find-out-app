@@ -43,6 +43,7 @@ Route::prefix('admin')->group(function () {
 
         //Category
         Route::resource('categories',CategoryController::class)->except(['create','edit']);
+        Route::get('sub-categories/{id}', [CategoryController::class, 'getSubCategories']);
 
         //Customer
         Route::resource('customers',CustomerController::class)->except(['show']);

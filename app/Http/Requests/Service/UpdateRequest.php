@@ -25,7 +25,8 @@ class UpdateRequest extends FormRequest
         $cityCount = count($this->city_id);
 
         return [
-            'name' => 'required|string|max:255',
+            'name_ar' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
             'start_at' => 'nullable|date_format:H:i',
             'end_at' => 'nullable|date_format:H:i|after:start_at',
             'facebook_link' => ['nullable',Rule::regex('/^(https?:\/\/)?(www\.)?([a-zA-Z0-9\-]+\.){1,}[a-zA-Z]{2,6}(\S*)$/'),],
@@ -49,8 +50,10 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => __('failed_message.service.name.required'),
-            'name.max' => __('failed_message.service.name.max'),
+            'name_ar.required' => __('failed_message.service.name.required'),
+            'name_en.required' => __('failed_message.service.name.required'),
+            'name_ar.max' => __('failed_message.service.name.max'),
+            'name_en.max' => __('failed_message.service.name.max'),
             'start_at.date_format' => __('failed_message.service.start_at.date_format'),
             'end_at.date_format' => __('failed_message.service.end_at.date_format'),
             'facebook_link.regex' => __('failed_message.service.facebook_link.regex'),

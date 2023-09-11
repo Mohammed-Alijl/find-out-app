@@ -7,11 +7,14 @@ use App\Http\Requests\Service\StoreRequest;
 use App\Http\Requests\Service\UpdateRequest;
 use App\Repositories\CategoryRepository;
 use App\Repositories\ServiceRepository;
+use App\Repositories\ZoneRepository;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    public function __construct(private ServiceRepository $serviceRepository, private CategoryRepository $categoryRepository)
+    public function __construct(private ServiceRepository $serviceRepository,
+                                private CategoryRepository $categoryRepository,
+                                private ZoneRepository $zoneRepository,)
     {
     }
 
@@ -30,7 +33,8 @@ class ServiceController extends Controller
     public function create()
     {
         $categories = $this->categoryRepository->getAll();
-        return view('admin.service.create',compact('categories'));
+        $zones = $this->zoneRepository->getAll();
+        return view('admin.service.create',compact('categories','zones'));
     }
 
     /**

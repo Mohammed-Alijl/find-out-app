@@ -33,7 +33,7 @@
                     <th>#</th>
                     <th>{{__('admin/pages/services.name')}}</th>
                     <th>{{__('admin/pages/services.parent_category')}}</th>
-                    <th>{{__('admin/pages/customers.sub_category')}}</th>
+                    <th>{{__('admin/pages/services.sub_category')}}</th>
                     <th>{{__('admin/pages/customers.action')}}</th>
                 </tr>
                 </thead>
@@ -47,7 +47,7 @@
 
                         <td>{{ $service->name }}</td>
                         <td>{{ $service->category->name }}</td>
-                        <td>{{ $service->subCategory->name }}</td>
+                        <td>{{ $service->subCategory ? $service->subCategory->name : '' }}</td>
                         <td>
                             <a href="{{route('services.edit',$service->id)}}">
                                 <i class="align-middle" data-feather="edit-2"></i>
