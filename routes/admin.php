@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdvertisementController;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CategoryTypeController;
@@ -52,6 +53,9 @@ Route::prefix('admin')->group(function () {
 
         //Service
         Route::resource('services',ServiceController::class);
+
+        //Advertisement
+        Route::resource('advertisements',AdvertisementController::class)->except(['show']);
 
     });
 

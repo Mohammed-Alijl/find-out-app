@@ -54,5 +54,12 @@ return [
     'service.edit.success'=>'Service Was Modified Successfully',
     'service.delete.success'=>'Service was deleted successfully',
 
+    //===================================================================================
+    // ADVERTISEMENTS====================================================================
+    //===================================================================================
+    'advertisement.add.success'=>'Advertisement Was Added Successfully',
+    'advertisement.edit.success'=>'Advertisement Was Modified Successfully',
+    'advertisement.delete.success'=>'Advertisement was deleted successfully',
+
 
 ];
