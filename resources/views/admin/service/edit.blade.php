@@ -279,7 +279,7 @@
                                         <div class="mb-3 col-md-3">
                                             <label for="" class="form-label">{{__('admin/pages/services.zone')}} <span
                                                     style="color: red">*</span></label>
-                                            <select class="form-control" id="inputZone_{{$row->id}}" name="zone_id">
+                                            <select class="form-control" id="inputZone_{{$row->id}}" name="zone_id[]">
                                                 @foreach($zones as $zone)
                                                     <option
                                                         value="{{$zone->id}}" {{$zone->id ==  $row->id ? 'selected' : ''}}>{{$zone->name}}</option>
@@ -292,7 +292,7 @@
                                             <select class="form-control" id="" name="city_id[]">
                                                 @foreach($row->cities as $city)
                                                     <option
-                                                        value="{{$city->id}} {{$service->cities->skip($index)->take(1)->first()->id}}">{{$city->name}}</option>
+                                                        value="{{$city->id}}" {{$service->cities->skip($index)->take(1)->first()->id}}>{{$city->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
