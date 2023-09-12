@@ -123,4 +123,10 @@ return [
     'page.image.required' => 'Please Send The Image Page',
     'page.image.image' => 'Please Just Send Image',
     'page.image.mimes' => 'Image mimes should be jpg, png, jpeg or svg',
+
+    //===================================================================================
+    // SOCIAL MEDIA======================================================================
+    //===================================================================================
+    'social.link.url' => 'Please Enter A Valid Link',
+    'social.link.required' => 'The Link Is Required',
 ];
