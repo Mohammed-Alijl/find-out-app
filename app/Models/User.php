@@ -61,4 +61,8 @@ class User extends Authenticatable
     public function advertisements(){
         return $this->hasMany(Advertisement::class,'user_id');
     }
+
+    public function contacts(){
+        return $this->hasMany(Contact::class,'user_id');
+    }
 }
