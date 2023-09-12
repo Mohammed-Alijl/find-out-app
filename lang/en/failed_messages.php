@@ -15,41 +15,41 @@ return [
     //===================================================================================
     // ZONES=============================================================================
     //===================================================================================
-    'zone.delete.failed'=>'The Zone Is In Use',
-    'zone.name_ar.required'=>'Please Enter The Arabic Zone Name',
-    'zone.name_ar.max'=>'The Arabic Zone Name Is Too Long',
-    'zone.name_en.required'=>'Please Enter The English Zone Name',
-    'zone.name_en.max'=>'The English Zone Name Is Too Long',
+    'zone.delete.failed' => 'The Zone Is In Use',
+    'zone.name_ar.required' => 'Please Enter The Arabic Zone Name',
+    'zone.name_ar.max' => 'The Arabic Zone Name Is Too Long',
+    'zone.name_en.required' => 'Please Enter The English Zone Name',
+    'zone.name_en.max' => 'The English Zone Name Is Too Long',
 
     //===================================================================================
     // CITES=============================================================================
     //===================================================================================
-    'city.delete.failed'=>'The City Is In Use',
-    'city.name_ar.required'=>'Please Enter The Arabic City Name',
-    'city.name_ar.max'=>'The Arabic City Name Is Too Long',
-    'city.name_en.required'=>'Please Enter The English City Name',
-    'city.name_en.max'=>'The English City Name Is Too Long',
-    'city.zone_id.required'=>'Please Select A Zone From Zone Selected Box',
+    'city.delete.failed' => 'The City Is In Use',
+    'city.name_ar.required' => 'Please Enter The Arabic City Name',
+    'city.name_ar.max' => 'The Arabic City Name Is Too Long',
+    'city.name_en.required' => 'Please Enter The English City Name',
+    'city.name_en.max' => 'The English City Name Is Too Long',
+    'city.zone_id.required' => 'Please Select A Zone From Zone Selected Box',
 
     //===================================================================================
     // CATEGORY TYPE=====================================================================
     //===================================================================================
-    'category.type.delete.failed'=>'The Category Type Is In Use',
-    'category.type.name_ar.required'=>'Please Enter The Arabic Category Type Name',
-    'category.type.name_ar.max'=>'The Arabic Category Type Name Is Too Long',
-    'category.type.name_en.required'=>'Please Enter The English Category Type Name',
-    'category.type.name_en.max'=>'The English Category Type Name Is Too Long',
+    'category.type.delete.failed' => 'The Category Type Is In Use',
+    'category.type.name_ar.required' => 'Please Enter The Arabic Category Type Name',
+    'category.type.name_ar.max' => 'The Arabic Category Type Name Is Too Long',
+    'category.type.name_en.required' => 'Please Enter The English Category Type Name',
+    'category.type.name_en.max' => 'The English Category Type Name Is Too Long',
 
     //===================================================================================
     // CATEGORY==========================================================================
     //===================================================================================
-    'category.delete.failed'=>'The Category Is In Use',
-    'category.parent_category_id.exists'=>'Please Select Parent Category Just From The Selected Box',
-    'category.name_ar.required'=>'Please Enter The Arabic Category Name',
-    'category.name_ar.max'=>'The Arabic Category Name Is Too Long',
-    'category.name_en.required'=>'Please Enter The English Category Name',
-    'category.name_en.max'=>'The English Category Name Is Too Long',
-    'category.category_type_id.required'=>'Please Select A Category From Category Selected Box',
+    'category.delete.failed' => 'The Category Is In Use',
+    'category.parent_category_id.exists' => 'Please Select Parent Category Just From The Selected Box',
+    'category.name_ar.required' => 'Please Enter The Arabic Category Name',
+    'category.name_ar.max' => 'The Arabic Category Name Is Too Long',
+    'category.name_en.required' => 'Please Enter The English Category Name',
+    'category.name_en.max' => 'The English Category Name Is Too Long',
+    'category.category_type_id.required' => 'Please Select A Category From Category Selected Box',
 
     //===================================================================================
     // CUSTOMER==========================================================================
@@ -111,4 +111,16 @@ return [
     'advertisement.city_id.integer' => 'Please Select The City From The City Selected Box',
     'advertisement.city_id.exists' => 'Please Select The City From The City Selected Box',
     'advertisement.city_id.required_if' => 'When You Select The Display Place [City, Both] You Should Select The City',
+
+    //===================================================================================
+    // PAGES=============================================================================
+    //===================================================================================
+    'page.name_ar.required' => 'Arabic Name Of Page Is Required',
+    'page.name_ar.max' => 'Arabic Name Of Page Is Too Long',
+    'page.name_en.required' => 'English Name Of Page Is Required',
+    'page.name_en.max' => 'English Name Of Page Is Too Long',
+    'page.content.required' => 'The Content Page Is Required',
+    'page.image.required' => 'Please Send The Image Page',
+    'page.image.image' => 'Please Just Send Image',
+    'page.image.mimes' => 'Image mimes should be jpg, png, jpeg or svg',
 ];
