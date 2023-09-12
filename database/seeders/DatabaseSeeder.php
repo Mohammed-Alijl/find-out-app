@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
            AdminSeeder::class,
-           CountrySeeder::class
+           CountrySeeder::class,
+           SocialMediaSeeder::class
         ]);
     }
 }
