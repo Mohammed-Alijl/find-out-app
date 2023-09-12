@@ -21,7 +21,7 @@ class RoleRepository implements BasicRepositoryInterface
         return Role::orderBy('id', 'Asc')->get();
     }
 
-    public function find($id): Admin
+    public function find($id)
     {
         return Role::findOrFail($id);
     }

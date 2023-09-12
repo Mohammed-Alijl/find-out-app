@@ -70,8 +70,8 @@ class RoleController extends Controller
     {
         $role = $this->roleRepository->find($id);
         $rolePermissions = $role->permissions->pluck('name')->toArray();
-        $methods = $this->getMethods();
-        $models = $this->getModels();
+        $methods = $this->roleRepository->getMethods();
+        $models = $this->roleRepository->getModels();
 
         return view('admin.roles.show', compact('role', 'rolePermissions', 'methods', 'models'));
     }
@@ -121,6 +121,6 @@ class RoleController extends Controller
     {
         $this->roleRepository->delete($request->id);
         return redirect()->route('roles.index')
-            ->with('delete-success', __('success_messages.role.destroy.success'));
+            ->with('delete-success', __('success_messages.role.delete.success'));
     }
 }
