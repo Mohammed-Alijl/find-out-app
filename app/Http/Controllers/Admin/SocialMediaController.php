@@ -11,6 +11,8 @@ class SocialMediaController extends Controller
 {
     public function __construct(private SocialMediaRepository $socialMediaRepository)
     {
+        $this->middleware('permission:view_social', ['only' => ['index']]);
+        $this->middleware('permission:edit_service', ['only' => ['update']]);
     }
 
     /**

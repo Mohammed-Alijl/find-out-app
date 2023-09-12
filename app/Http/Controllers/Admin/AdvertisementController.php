@@ -17,6 +17,12 @@ class AdvertisementController extends Controller
         private CityRepository $cityRepository,
     )
     {
+        $this->middleware('permission:view_advertisement', ['only' => ['index', 'show']]);
+        $this->middleware('permission:add_advertisement', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit_advertisement', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete_advertisement', ['only' => ['destroy']]);
+        $this->middleware('permission:view_advertisement_request', ['only' => ['advertisementRequests']]);
+        $this->middleware('permission:add_advertisement_request', ['only' => ['approve']]);
     }
 
     /**

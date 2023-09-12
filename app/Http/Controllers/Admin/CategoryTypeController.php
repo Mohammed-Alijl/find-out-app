@@ -11,6 +11,10 @@ class CategoryTypeController extends Controller
 {
     public function __construct(private CategoryTypeRepository $typeRepository)
     {
+        $this->middleware('permission:view_category_type', ['only' => ['index', 'show']]);
+        $this->middleware('permission:add_category_type', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit_category_type', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete_category_type', ['only' => ['destroy']]);
     }
 
     /**

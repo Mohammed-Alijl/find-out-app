@@ -16,6 +16,10 @@ class ServiceController extends Controller
                                 private CategoryRepository $categoryRepository,
                                 private ZoneRepository $zoneRepository,)
     {
+        $this->middleware('permission:view_service', ['only' => ['index', 'show']]);
+        $this->middleware('permission:add_service', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit_service', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete_service', ['only' => ['destroy']]);
     }
 
     /**

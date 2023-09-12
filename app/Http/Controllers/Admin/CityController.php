@@ -12,6 +12,10 @@ class CityController extends Controller
 {
     public function __construct(private CityRepository $cityRepository, private ZoneRepository $zoneRepository)
     {
+        $this->middleware('permission:view_city', ['only' => ['index', 'show']]);
+        $this->middleware('permission:add_city', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit_city', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete_city', ['only' => ['destroy']]);
     }
 
     /**

@@ -11,6 +11,10 @@ class ZoneController extends Controller
 {
     public function __construct(private ZoneRepository $zoneRepository)
     {
+        $this->middleware('permission:view_zone', ['only' => ['index']]);
+        $this->middleware('permission:add_zone', ['only' => ['store']]);
+        $this->middleware('permission:edit_zone', ['only' => ['update']]);
+        $this->middleware('permission:delete_zone', ['only' => ['destroy']]);
     }
 
     /**

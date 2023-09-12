@@ -13,6 +13,10 @@ class CustomerController extends Controller
 {
     public function __construct(private CustomerRepository $customerRepository, private ZoneRepository $zoneRepository)
     {
+        $this->middleware('permission:view_customer', ['only' => ['index', 'show']]);
+        $this->middleware('permission:add_customer', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit_customer', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete_customer', ['only' => ['destroy']]);
     }
 
     /**

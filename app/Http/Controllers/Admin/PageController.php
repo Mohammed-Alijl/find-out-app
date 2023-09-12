@@ -12,6 +12,10 @@ class PageController extends Controller
 {
     public function __construct(private PageRepository $pageRepository)
     {
+        $this->middleware('permission:view_page', ['only' => ['index', 'show']]);
+        $this->middleware('permission:add_page', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit_page', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete_page', ['only' => ['destroy']]);
     }
 
     /**

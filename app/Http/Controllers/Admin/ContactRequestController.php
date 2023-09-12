@@ -10,6 +10,8 @@ class ContactRequestController extends Controller
 {
     public function __construct(private ContactRepository $contactRepository)
     {
+        $this->middleware('permission:view_contact', ['only' => ['index', 'show']]);
+        $this->middleware('permission:delete_contact', ['only' => ['destroy']]);
     }
 
     /**
