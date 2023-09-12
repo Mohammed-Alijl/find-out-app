@@ -88,7 +88,7 @@
                                 <i class="fas fa-ad"></i> <span
                                     class="align-middle">{{__('admin/layouts/components/sidebar.advertisements')}}</span>
                             </a>
-                            <ul id="ad" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar" {{request()->route()->named(['advertisements.index','advertisements.create','advertisements.edit']) ? 'show' : ''}}>
+                            <ul id="ad" class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['advertisements.index','advertisements.create','advertisements.edit']) ? 'show' : ''}}" data-bs-parent="#sidebar">
                                 <li class="sidebar-item {{request()->route()->named(['advertisements.index','advertisements.create','advertisements.edit']) ? 'active' : ''}}"><a class="sidebar-link"
                                                             href="{{route('advertisements.index')}}">{{__('admin/layouts/components/sidebar.advertisements')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"

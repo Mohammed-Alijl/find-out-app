@@ -39,4 +39,13 @@ class CategoryTypeRepository implements BasicRepositoryInterface
         $zone->delete();
     }
 
+    public function getServices($id)
+    {
+        $categoryType = $this->find($id);
+
+        return $categoryType->categories->flatMap(function ($category) {
+            return $category->services;
+        });
+    }
+
 }

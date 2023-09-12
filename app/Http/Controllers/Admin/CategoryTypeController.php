@@ -77,4 +77,9 @@ class CategoryTypeController extends Controller
             return redirect()->back()->with('delete-success', __('success_messages.category.type.delete.success'));
         }
     }
+
+    public function getServices($id){
+        $subCategories = $this->typeRepository->getServices($id)->pluck('name', 'id');
+        return json_encode($subCategories);
+    }
 }

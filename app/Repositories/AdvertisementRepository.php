@@ -85,7 +85,7 @@ class AdvertisementRepository implements BasicRepositoryInterface
 
         //Delete The Advertisement Images
         foreach ($advertisement->images as $image) {
-            Storage::disk('image')->delete('advertisement/' . $advertisement->path);
+            Storage::disk('image')->delete($image->path);
             $image->delete();
         }
 

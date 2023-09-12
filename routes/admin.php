@@ -41,6 +41,7 @@ Route::prefix('admin')->group(function () {
 
         //Category Type
         Route::resource('category/types',CategoryTypeController::class)->except(['create','show','edit']);
+        Route::get('category-type-services/{id}', [CategoryTypeController::class, 'getServices']);
 
         //Category
         Route::resource('categories',CategoryController::class)->except(['create','edit']);
