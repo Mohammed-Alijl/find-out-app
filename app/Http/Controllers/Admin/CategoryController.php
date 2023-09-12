@@ -76,7 +76,7 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         $category = $this->categoryRepository->find($id);
-        if ($this->categoryRepository->getChildCategories($category->id)->count() > 0) {
+        if ($this->categoryRepository->getChildCategories($category->id)->count() > 0 || $category->services->count() > 0) {
             return redirect()->back()->with('delete-failed', __('failed_messages.category.delete.failed'));
         }else{
             $this->categoryRepository->delete($id);
