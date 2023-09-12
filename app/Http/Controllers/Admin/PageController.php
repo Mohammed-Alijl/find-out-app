@@ -37,7 +37,7 @@ class PageController extends Controller
     public function store(StoreRequest $request)
     {
         $this->pageRepository->create($request);
-        return redirect()->route('pages.index',__('success_messages.page.add.success'));
+        return redirect()->route('pages.index')->with('add-success',__('success_messages.page.add.success'));
     }
 
     /**
@@ -63,7 +63,7 @@ class PageController extends Controller
     public function update(UpdateRequest $request, string $id)
     {
         $this->pageRepository->update($request,$id);
-        return redirect()->route('pages.index',__('success_messages.page.edit.success'));
+        return redirect()->route('pages.index')->with('edit-success',__('success_messages.page.edit.success'));
     }
 
     /**
@@ -72,6 +72,6 @@ class PageController extends Controller
     public function destroy(string $id)
     {
         $this->pageRepository->delete($id);
-        return redirect()->route('pages.index',__('success_messages.page.delete.success'));
+        return redirect()->route('pages.index')->with('delete-success',__('success_messages.page.delete.success'));
     }
 }
