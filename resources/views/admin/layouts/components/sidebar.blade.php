@@ -101,9 +101,9 @@
                                 <i class="fas fa-cogs"></i><span
                                     class="align-middle">{{__('admin/layouts/components/sidebar.settings')}}</span>
                             </a>
-                            <ul id="settings" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                                <li class="sidebar-item"><a class="sidebar-link"
-                                                            href="#">{{__('admin/layouts/components/sidebar.pages')}}</a></li>
+                            <ul id="settings" class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['pages.index','pages.create','pages.edit']) ? 'show' : ''}}" data-bs-parent="#sidebar">
+                                <li class="sidebar-item {{request()->route()->named(['pages.index','pages.create','pages.edit']) ? 'active' : ''}}"><a class="sidebar-link"
+                                                            href="{{route('pages.index')}}">{{__('admin/layouts/components/sidebar.pages')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"
                                                             href="#">{{__('admin/layouts/components/sidebar.social.media.links')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CategoryTypeController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ZoneController;
 use App\Http\Controllers\ProfileController;
@@ -59,6 +60,9 @@ Route::prefix('admin')->group(function () {
         Route::resource('advertisements',AdvertisementController::class);
         Route::get('ad-approve/{id}',[AdvertisementController::class,'approve'])->name('advertisement.approve');
         Route::get('ad/requests',[AdvertisementController::class,'advertisementRequests'])->name('advertisement.requests');
+
+        //Page
+        Route::resource('pages',PageController::class)->except(['show']);
     });
 
     //Auth:guest
