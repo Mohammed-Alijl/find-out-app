@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\ContactRequestController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\ZoneController;
@@ -72,6 +73,10 @@ Route::prefix('admin')->group(function () {
 
         //Contact Request
         Route::resource('contacts',ContactRequestController::class)->except(['store','show','create','edit','update']);
+
+
+        //Role
+        Route::resource('roles',RoleController::class);
     });
 
     //Auth:guest

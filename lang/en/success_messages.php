@@ -79,4 +79,10 @@ return [
     //===================================================================================
     'contact.delete.success'=>'Contact Request Was Deleted Successfully',
 
+    //===================================================================================
+    // Role==============================================================================
+    //===================================================================================
+    'role.add.success'=>'Role Was Added Successfully',
+    'role.edit.success'=>'Role Was Modified Successfully',
+    'role.delete.success'=>'Role was deleted successfully',
 ];

@@ -115,11 +115,11 @@
                                 <i class="fas fa-key"></i><span
                                     class="align-middle">{{__('admin/layouts/components/sidebar.users')}}</span>
                             </a>
-                            <ul id="users" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                                <li class="sidebar-item"><a class="sidebar-link"
+                            <ul id="users" class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['roles.index']) ? 'show' : ''}}" data-bs-parent="#sidebar">
+                                <li class="sidebar-item {{request()->route()->named(['roles.index']) ? 'active' : ''}}"><a class="sidebar-link"
                                                             href="#">{{__('admin/layouts/components/sidebar.users')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"
-                                                            href="#">{{__('admin/layouts/components/sidebar.roles')}}</a></li>
+                                                            href="{{route('roles.index')}}">{{__('admin/layouts/components/sidebar.roles')}}</a></li>
                             </ul>
                         </li>
 
