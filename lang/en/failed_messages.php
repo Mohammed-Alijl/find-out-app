@@ -129,4 +129,15 @@ return [
     //===================================================================================
     'social.link.url' => 'Please Enter A Valid Link',
     'social.link.required' => 'The Link Is Required',
+
+    //===================================================================================
+    // CONTACT REQUEST===================================================================
+    //===================================================================================
+    'contact.name.required' => 'Please Enter Your Name',
+    'contact.name.max' => 'The Name Is Too Long',
+    'contact.email.required' => 'Please Enter The Email',
+    'contact.email.email' => 'Please Enter A Valid Email',
+    'contact.title.required' => 'Please Enter The Title',
+    'contact.title.max' => 'The Title Is Too Long',
+    'contact.message.required' => 'Please Enter The Message',
 ];
