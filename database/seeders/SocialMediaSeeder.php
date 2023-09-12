@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\SocialMedia;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,7 +13,7 @@ class SocialMediaSeeder extends Seeder
      */
     public function run(): void
     {
-        $socialMedia = [
+        $socialMedias = [
             [
                 'Whatsapp',
                 'واتساب',
@@ -44,5 +45,12 @@ class SocialMediaSeeder extends Seeder
                 ''
             ],
         ];
+        foreach ($socialMedias as $media){
+            $socialMedia = new SocialMedia();
+            $socialMedia->setTranslation('name','en',$media[0]);
+            $socialMedia->setTranslation('name','ar',$media[1]);
+            $socialMedia->link = $media[2];
+            $socialMedia->save();
+        }
     }
 }
