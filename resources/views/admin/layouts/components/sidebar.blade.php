@@ -105,7 +105,7 @@
                                 <li class="sidebar-item {{request()->route()->named(['pages.index','pages.create','pages.edit']) ? 'active' : ''}}"><a class="sidebar-link"
                                                             href="{{route('pages.index')}}">{{__('admin/layouts/components/sidebar.pages')}}</a></li>
                                 <li class="sidebar-item {{request()->route()->named(['socials.index']) ? 'active' : ''}}"><a class="sidebar-link"
-                                                            href="{{'socials.index'}}">{{__('admin/layouts/components/sidebar.social.media.links')}}</a></li>
+                                                            href="{{route('socials.index')}}">{{__('admin/layouts/components/sidebar.social.media.links')}}</a></li>
                                 <li class="sidebar-item"><a class="sidebar-link"
                                                             href="#">{{__('admin/layouts/components/sidebar.messages')}}</a></li>
                             </ul>
