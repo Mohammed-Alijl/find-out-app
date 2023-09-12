@@ -62,5 +62,11 @@ return [
     'advertisement.delete.success'=>'Advertisement was deleted successfully',
     'advertisement.approve.success'=>'The ad has been successfully approved',
 
+    //===================================================================================
+    // PAGE==============================================================================
+    //===================================================================================
+    'page.add.success'=>'Page Was Added Successfully',
+    'page.edit.success'=>'Page Was Modified Successfully',
+    'page.delete.success'=>'Page was deleted successfully',
 
 ];
