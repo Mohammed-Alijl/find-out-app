@@ -22,7 +22,8 @@ class ContactRepository implements BasicRepositoryInterface
         $contact = new Contact();
         $contact->title = $request->title;
         $contact->message = $request->message;
-        $contact->user_id = $request->customer_id;
+        $contact->name = $request->name;
+        $contact->email = $request->email;
         $contact->save();
     }
 
