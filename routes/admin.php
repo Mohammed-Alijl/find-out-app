@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\ZoneController;
+use App\Http\Controllers\Admn\ContactRequestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -68,6 +69,10 @@ Route::prefix('admin')->group(function () {
 
         //Social Media
         Route::resource('socials',SocialMediaController::class)->except(['store','show','create','edit','delete']);
+
+
+        //Contact Request
+        Route::resource('contacts',ContactRequestController::class)->except(['store','show','create','edit','update']);
     });
 
     //Auth:guest
