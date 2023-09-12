@@ -18,7 +18,7 @@ class ContactRequestController extends Controller
     public function index()
     {
         $contactRequests = $this->contactRepository->getAll();
-        return view('admin.contact.index',compact('contactRequests'));
+        return view('admin.contactRequest.index',compact('contactRequests'));
     }
 
     /**

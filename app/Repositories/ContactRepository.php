@@ -9,7 +9,7 @@ class ContactRepository implements BasicRepositoryInterface
 {
     public function getAll()
     {
-        return Contact::get();
+        return Contact::orderBy('id', 'DESC')->get();
     }
 
     public function find($id)
