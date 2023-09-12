@@ -63,13 +63,13 @@ class AdvertisementRepository implements BasicRepositoryInterface
         $advertisement->save();
 
         //Update The Service Images
-        if ($request->filled('images')) {
+        if ($request->file('images')) {
             foreach ($advertisement->images as $image) { //delete old images
-                Storage::disk('image')->delete('advertisement/' . $advertisement->path);
+                Storage::disk('image')->delete($image->path);
                 $image->delete();
             }
-            foreach ($request->file('image') as $image) {
-                $path = $image->store('services', 'image');
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('advertisement', 'image');
                 $image = new AdvertisementImage();
                 $image->advertisement_id = $advertisement->id;
                 $image->path = $path;
