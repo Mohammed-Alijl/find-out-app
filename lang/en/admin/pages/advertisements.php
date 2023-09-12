@@ -22,4 +22,11 @@ return [
   'city' => 'City',
   'edit.title' => 'Edit Advertisement',
   'edit' => 'Edit',
+  'request.title' => 'Advertisement Request',
+  'advertisement.approve' => 'Advertisement Approved',
+  'customer' => 'Customer',
+  'approve.the.ad' => 'Approve The Ad',
+  'confirm' => 'Confirm',
+  'show.title' => 'Display Advertisement',
+  'show.description' => 'The Advertisement Details Is Here!',
 ];

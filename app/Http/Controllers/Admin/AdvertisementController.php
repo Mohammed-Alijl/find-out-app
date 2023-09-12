@@ -52,7 +52,8 @@ class AdvertisementController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $advertisement = $this->advertisementRepository->find($id);
+        return view('admin.advertisement.show',compact('advertisement'));
     }
 
     /**
@@ -82,5 +83,15 @@ class AdvertisementController extends Controller
     {
         $this->advertisementRepository->delete($id);
         return redirect()->route('advertisements.index')->with('delete-success',__('success_messages.advertisement.delete.success'));
+    }
+
+    public function advertisementRequests(){
+        $advertisements = $this->advertisementRepository->getCustomerAdvertisement();
+        return view('admin.advertisement.advertisementRequests',compact('advertisements'));
+    }
+
+    public function approve($id){
+        $this->advertisementRepository->approve($id);
+        return redirect()->back()->with('approve-success',__('success-messages.advertisement.approve.success'));
     }
 }

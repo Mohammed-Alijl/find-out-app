@@ -57,4 +57,8 @@ class User extends Authenticatable
     public function city(){
         return $this->belongsTo(City::class);
     }
+
+    public function advertisements(){
+        return $this->hasMany(Advertisement::class,'user_id');
+    }
 }

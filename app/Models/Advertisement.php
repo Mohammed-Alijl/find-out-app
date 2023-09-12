@@ -16,6 +16,7 @@ class Advertisement extends Model
       'service_id',
       'display_place',
       'city_id',
+      'user_id',
       'status',
     ];
 
@@ -39,5 +40,9 @@ class Advertisement extends Model
 
     public function images(){
         return $this->hasMany(AdvertisementImage::class);
+    }
+
+    public function customer(){
+        return $this->belongsTo(User::class,'user_id');
     }
 }

@@ -60,6 +60,7 @@ return [
     'advertisement.add.success'=>'Advertisement Was Added Successfully',
     'advertisement.edit.success'=>'Advertisement Was Modified Successfully',
     'advertisement.delete.success'=>'Advertisement was deleted successfully',
+    'advertisement.approve.success'=>'The ad has been successfully approved',
 
 
 ];

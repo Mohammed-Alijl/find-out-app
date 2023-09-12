@@ -1,14 +1,9 @@
 @extends('admin.layouts.master')
-@section('title',__('admin/pages/advertisements.title'))
+@section('title',__('admin/pages/advertisements.request.title'))
 @section('page-header')
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
             <h3><strong>{{__('admin/pages/advertisements.title')}}</strong></h3>
-        </div>
-        <div class="col-auto ms-auto text-end mt-n1">
-            <a href="{{route('advertisements.create')}}" class="btn btn-primary">
-                {{__('admin/pages/advertisements.add.advertisement')}}
-            </a>
         </div>
     </div>
 @endsection
@@ -34,6 +29,7 @@
                     <th>{{__('admin/pages/advertisements.name')}}</th>
                     <th>{{__('admin/pages/advertisements.category_type')}}</th>
                     <th>{{__('admin/pages/advertisements.service')}}</th>
+                    <th>{{__('admin/pages/advertisements.customer')}}</th>
                     <th>{{__('admin/pages/advertisements.action')}}</th>
                 </tr>
                 </thead>
@@ -51,12 +47,13 @@
                         </td>
                         <td>{{ $advertisement->categoryType->name }}</td>
                         <td>{{ $advertisement->service->name}}</td>
+                        <td>{{ $advertisement->customer->name}}</td>
                         <td>
-                            <a href="{{route('advertisements.edit',$advertisement->id)}}">
-                                <i class="align-middle" data-feather="edit-2"></i>
+                            <a href="#" onclick="approve({{ $advertisement->id }})">
+                                <i class="align-middle me-2" data-feather="user-check"></i>
                             </a>
                             <a href="#" onclick="deletes({{ $advertisement->id }})"><i class="align-middle"
-                                                                              data-feather="trash"></i></a>
+                                                                                       data-feather="trash"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -93,6 +90,24 @@
                 }
             })
         }
+
+        function approve(advertisementId) {
+            Swal.fire({
+                title: '{{__('admin/pages/customers.are.you.sure')}}',
+                text: "{{__('admin/pages/advertisements.approve.the.ad')}}",
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonColor: '#1db954',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '{{__('admin/pages/advertisements.confirm')}}'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirect to the Laravel route with the advertisementId parameter
+                    window.location.href = '{{ route('advertisement.approve', ['id']) }}'.replace('id', advertisementId);
+                }
+            });
+        }
+
         function deleteAdvertisement(advertisementId) {
             // Send an AJAX request or submit a form to the delete route
             const form = document.createElement('form');
@@ -121,17 +136,10 @@
             'success'
         )
         @endif
-        @if(\Illuminate\Support\Facades\Session::has('add-success'))
+        @if(\Illuminate\Support\Facades\Session::has('approve-success'))
         Swal.fire(
-            '{{__('admin/pages/advertisements.advertisement.add')}}',
+            '{{__('admin/pages/advertisements.advertisement.approve')}}',
             '{{\Illuminate\Support\Facades\Session::get('add-success')}}',
-            'success'
-        )
-        @endif
-        @if(\Illuminate\Support\Facades\Session::has('edit-success'))
-        Swal.fire(
-            '{{__('admin/pages/advertisements.advertisement.edit')}}',
-            '{{\Illuminate\Support\Facades\Session::get('edit-success')}}',
             'success'
         )
         @endif

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('service_id')->constrained()->cascadeOnDelete();
             $table->enum('display_place',['main','city','both'])->default('main');
             $table->foreignId('city_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

@@ -56,8 +56,9 @@ Route::prefix('admin')->group(function () {
         Route::resource('services',ServiceController::class);
 
         //Advertisement
-        Route::resource('advertisements',AdvertisementController::class)->except(['show']);
-
+        Route::resource('advertisements',AdvertisementController::class);
+        Route::get('ad-approve/{id}',[AdvertisementController::class,'approve'])->name('advertisement.approve');
+        Route::get('ad/requests',[AdvertisementController::class,'advertisementRequests'])->name('advertisement.requests');
     });
 
     //Auth:guest

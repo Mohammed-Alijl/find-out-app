@@ -60,5 +60,6 @@ return [
     'advertisement.add.success' => 'تمت إضافة الاعلان بنجاح',
     'advertisement.edit.success' => 'تم تعديل الاعلان بنجاح',
     'advertisement.delete.success' => 'تم حذف الاعلان بنجاح',
+    'advertisement.approve.success' => 'تمت الموافقة على الاعلان بنجاح',
 
 ];

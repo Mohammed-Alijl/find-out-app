@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title',__('admin/pages/advertisements.edit.title'))
+@section('title',__('admin/pages/advertisements.show.title'))
 @section('css')
     <!-- default icons used in the plugin are from Bootstrap 5.x icon library (which can be enabled by loading CSS below) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css"
@@ -65,18 +65,15 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title">{{__('admin/pages/advertisements.edit.title')}}</h5>
-                <h6 class="card-subtitle text-muted">{{__('admin/pages/advertisements.edit.description')}}</h6>
+                <h5 class="card-title">{{__('admin/pages/advertisements.show.title')}}</h5>
+                <h6 class="card-subtitle text-muted">{{__('admin/pages/advertisements.show.description')}}</h6>
             </div>
             <div class="card-body">
-                <form action="{{route('advertisements.update',$advertisement->id)}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
-                    @csrf
-                    @method('put')
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label"
-                                   for="name_ar">{{__('admin/pages/advertisements.name_ar')}} <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" id="name_ar" name="name_ar" maxlength="255" value="{{$advertisement->getTranslation('name','ar')}}"
+                                   for="name_ar">{{__('admin/pages/advertisements.name_ar')}}</label>
+                            <input type="text" class="form-control" id="name_ar" name="name_ar" maxlength="255" value="{{$advertisement->getTranslation('name','ar')}}" disabled
                                    placeholder="{{__('admin/pages/advertisements.name_ar')}}" autocomplete="off" required>
                             <div class="invalid-feedback">
                                 {{__('admin/pages/advertisements.name.invalid')}}
@@ -84,8 +81,8 @@
                         </div>
                         <div class="mb-3 col-md-6">
                             <label class="form-label"
-                                   for="name_en">{{__('admin/pages/advertisements.name_en')}} <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" id="name_en" name="name_en" maxlength="255" value="{{$advertisement->getTranslation('name','en')}}"
+                                   for="name_en">{{__('admin/pages/advertisements.name_en')}} </label>
+                            <input type="text" class="form-control" id="name_en" name="name_en" maxlength="255" value="{{$advertisement->getTranslation('name','en')}}" disabled
                                    placeholder="{{__('admin/pages/advertisements.name_en')}}" autocomplete="off" required>
                             <div class="invalid-feedback">
                                 {{__('admin/pages/advertisements.name.invalid')}}
@@ -95,47 +92,40 @@
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label"
-                                   for="category_type">{{__('admin/pages/advertisements.category_type')}} <span style="color: red">*</span></label>
-                            <select id="category_type" class="form-control" name="category_type_id" required>
-                                @foreach($categoryTypes as $categoryType)
-                                    <option value="{{$categoryType->id}}" {{$advertisement->categoryType->id === $categoryType->id ? 'selected' : ''}}>{{$categoryType->name}}</option>
-                                @endforeach
+                                   for="category_type">{{__('admin/pages/advertisements.category_type')}}</label>
+                            <select id="category_type" class="form-control" name="category_type_id" disabled>
+                                    <option selected>{{$advertisement->categoryType->name}}</option>
                             </select>
                         </div>
                         <div class="mb-3 col-md-6">
                             <label class="form-label"
-                                   for="service">{{__('admin/pages/advertisements.service')}} <span style="color: red">*</span></label>
-                            <select id="service" class="form-control" name="service_id" required>
+                                   for="service">{{__('admin/pages/advertisements.service')}} </label>
+                            <select id="service" class="form-control" name="service_id" disabled>
                                 <option value="{{$advertisement->service->id}}" selected>{{$advertisement->service->name}}</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <label class="form-label" for="inputDisplayPlace">{{__('admin/pages/advertisements.display_place')}} <span style="color: red">*</span></label>
-                            <select id="inputDisplayPlace" class="form-control" name="display_place" required>
+                            <label class="form-label" for="inputDisplayPlace">{{__('admin/pages/advertisements.display_place')}}</label>
+                            <select id="inputDisplayPlace" class="form-control" name="display_place" disabled>
                                     <option value="main" {{$advertisement->display_place === 'main' ? 'selected' : ''}}>{{__('admin/pages/advertisements.main.page')}}</option>
                                     <option value="city" {{$advertisement->display_place === 'city' ? 'selected' : ''}}>{{__('admin/pages/advertisements.city.page')}}</option>
                                     <option value="both" {{$advertisement->display_place === 'both' ? 'selected' : ''}}>{{__('admin/pages/advertisements.both.page')}}</option>
                             </select>
                         </div>
-                        <input type="hidden" name="status" value="1">
-                        <div class="mb-3 col-md-6" id="cityContainer" @if(!$advertisement->city) style="display: none" @endif >
-                            <label class="form-label" for="inputCity">{{__('admin/pages/advertisements.city')}} <span style="color: red">*</span></label>
-                            <select id="inputCity" name="city_id" class="form-control">
-                                @foreach($cities as $city)
-                                    <option value="{{$city->id}}" @if($advertisement->city) {{$advertisement->city->id == $city->id ? 'selected' : ''}} @endif>{{$city->name}}</option>
-                                @endforeach
+                        @if($advertisement->city)
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="inputCity">{{__('admin/pages/advertisements.city')}} </label>
+                            <select id="inputCity" name="city_id" class="form-control" disabled>
+                                    <option>{{$advertisement->city->name}}</option>
                             </select>
                         </div>
+                        @endif
                     </div>
                     <div class="file-loading">
-                        <input id="input-pd" name="images[]" type="file" multiple>
+                        <input id="input-pd" name="images[]" type="file" disabled>
                     </div>
-                    <br>
-                    <button type="submit"
-                            class="btn btn-primary">{{__('admin/pages/customers.edit')}}</button>
-                </form>
             </div>
         </div>
     </div>
@@ -163,75 +153,6 @@
 @endsection
 @section('scripts')
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            new Choices(document.querySelector("#category_type"));
-            new Choices(document.querySelector("#inputCity"));
-            // Choices.js
-            var serviceSelect = new Choices(document.querySelector("#service"), {
-                removeItemButton: true,
-            });
-
-            function updateServiceOptions(categoryTypeId) {
-                if (categoryTypeId) {
-                    $.ajax({
-                        url: "{{ URL::to('admin/category-type-services') }}/" + categoryTypeId,
-                        type: "GET",
-                        dataType: "json",
-                        success: function (data) {
-                            var cityOptions = [];
-                            $.each(data, function (key, value) {
-                                cityOptions.push({value: key, label: value});
-                            });
-                            serviceSelect.setChoices(cityOptions, 'value', 'label', true);
-                        },
-                    });
-                } else {
-                    serviceSelect.clearChoices();
-                }
-            }
-
-            $('#category_type').on('change', function () {
-                var categoryTypeId = $(this).val();
-                updateServiceOptions(categoryTypeId);
-
-                serviceSelect.clearStore();
-            });
-
-            var defaultcategoryTypeId = $('#inputZone').val();
-            updateServiceOptions(defaultcategoryTypeId);
-        });
-
-        document.getElementById('inputDisplayPlace').addEventListener('change',function(){
-            if(this.value === 'city' || this.value === 'both'){
-                document.getElementById('cityContainer').style.cssText = 'display: block';
-                document.getElementById('inputCity').required = true;
-            }else{
-                document.getElementById('cityContainer').style.cssText = 'display: none';
-                document.getElementById('inputCity').required = false;
-                document.getElementById('inputCity').value = '';
-            }
-        });
-
-        //Bootstrap Form Validation
-        (function () {
-            'use strict';
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.querySelectorAll('.needs-validation');
-
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-        })();
 
         $("#input-b3").fileinput({
             minFileCount: 1,
@@ -243,6 +164,13 @@
 
 
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <!-- buffer.min.js and filetype.min.js are necessary in the order listed for advanced mime type parsing and more correct
+         preview. This is a feature available since v5.5.0 and is needed if you want to ensure file mime type is parsed
+         correctly even if the local file's extension is named incorrectly. This will ensure more correct preview of the
+         selected file (note: this will involve a small processing overhead in scanning of file contents locally). If you
+         do not load these scripts then the mime type parsing will largely be derived using the extension in the filename
+         and some basic file content parsing signatures. -->
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/buffer.min.js"
             type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/filetype.min.js"
@@ -267,4 +195,3 @@
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/locales/LANG.js"></script>
 
 @endsection
-
