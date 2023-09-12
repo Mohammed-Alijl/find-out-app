@@ -110,12 +110,12 @@ class ServiceRepository implements BasicRepositoryInterface
         $service->save();
 
         //Update The Service Images
-        if ($request->filled('images')) {
+        if ($request->file('images')) {
             foreach ($service->images as $image) { //delete old images
-                Storage::disk('image')->delete('services/' . $service->path);
+                Storage::disk('image')->delete($image->path);
                 $image->delete();
             }
-            foreach ($request->file('image') as $image) {
+            foreach ($request->file('images') as $image) {
                 $path = $image->store('services', 'image');
                 $image = new ServiceImage();
                 $image->service_id = $service->id;
@@ -148,7 +148,7 @@ class ServiceRepository implements BasicRepositoryInterface
 
         //Delete The Service Images
         foreach ($service->images as $image) {
-            Storage::disk('image')->delete('services/' . $service->path);
+            Storage::disk('image')->delete($image->path);
             $image->delete();
         }
 
