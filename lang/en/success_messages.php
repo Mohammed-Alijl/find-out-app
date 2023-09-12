@@ -69,4 +69,9 @@ return [
     'page.edit.success'=>'Page Was Modified Successfully',
     'page.delete.success'=>'Page was deleted successfully',
 
+    //===================================================================================
+    // SOCIAL MEDIA======================================================================
+    //===================================================================================
+    'social.edit.success'=>'Modified Successfully',
+
 ];

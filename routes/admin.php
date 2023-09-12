@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\ZoneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +64,10 @@ Route::prefix('admin')->group(function () {
 
         //Page
         Route::resource('pages',PageController::class)->except(['show']);
+
+
+        //Social Media
+        Route::resource('socials',SocialMediaController::class)->except(['store','show','create','edit','delete']);
     });
 
     //Auth:guest
