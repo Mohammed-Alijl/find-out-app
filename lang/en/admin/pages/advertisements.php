@@ -2,6 +2,7 @@
 return [
   'title' => 'Advertisements',
   'add.advertisement' => 'Add Advertisement',
+  'edit.advertisement' => 'Edit Advertisement',
   'name' => 'Name',
   'category_type' => 'Category Type',
   'service' => 'Service',
@@ -10,6 +11,7 @@ return [
   'advertisement.edit' => 'Advertisement Edited',
   'add.title' => 'Add Advertisement',
   'add.description' => 'Add Advertisement From Here!',
+  'edit.description' => 'Edit Advertisement From Here!',
   'name_ar' => 'Name In Arabic',
   'name_en' => 'Name In English',
   'name.invalid' => 'Please Enter The Name',
@@ -18,4 +20,6 @@ return [
   'city.page' => 'City Page',
   'both.page' => 'Both',
   'city' => 'City',
+  'edit.title' => 'Edit Advertisement',
+  'edit' => 'Edit',
 ];

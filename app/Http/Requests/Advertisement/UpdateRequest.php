@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Advertisement;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class AdvertisementRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class AdvertisementRequest extends FormRequest
             'service_id' => 'required|integer|exists:services,id',
             'display_place' => ['required',Rule::in(['main', 'city', 'both'])],
             'city_id' => 'integer|exists:cities,id|required_if:display_place,city,both',
-            'images'=>'required|array',
+            'images'=>'array',
             'images.*'=>'image|mimes:jpeg,png,jpg,svg|max:2048',
         ];
     }

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AdvertisementRequest;
+use App\Http\Requests\Advertisement\StoreRequest;
+use App\Http\Requests\Advertisement\UpdateRequest;
 use App\Repositories\AdvertisementRepository;
 use App\Repositories\CategoryTypeRepository;
 use App\Repositories\CityRepository;
-use Illuminate\Http\Request;
 
 class AdvertisementController extends Controller
 {
@@ -41,7 +41,7 @@ class AdvertisementController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdvertisementRequest $request)
+    public function store(StoreRequest $request)
     {
         $this->advertisementRepository->create($request);
         return redirect()->route('advertisements.index')->with('add-success',__('success_messages.advertisement.add.success'));
@@ -69,7 +69,7 @@ class AdvertisementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, string $id)
     {
         $this->advertisementRepository->update($request,$id);
         return redirect()->route('advertisements.index')->with('edit-success',__('success_messages.advertisement.edit.success'));
