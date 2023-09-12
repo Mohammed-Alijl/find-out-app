@@ -35,7 +35,7 @@
                                 </div>
 
                                 <div
-                                    class="sidebar-user-subtitle">{{--{{auth('admin')->user()->roles->pluck('name','name')->first()}}--}}</div>
+                                    class="sidebar-user-subtitle">{{auth('admin')->user()->roles->pluck('name','name')->first()}}</div>
                             </div>
                         </div>
                     </div>
