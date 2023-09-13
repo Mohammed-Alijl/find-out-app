@@ -41,19 +41,28 @@
                     <tr>
                         <td>{{$rowNumber++}}</td>
                         <td>
+                            @can('view_advertisement_request')
                             <a href="{{route('advertisements.show',$advertisement->id)}}">
                                 {{ $advertisement->name }}
                             </a>
+                            @else
+                                {{ $advertisement->name }}
+                            @endcan
+
                         </td>
                         <td>{{ $advertisement->categoryType->name }}</td>
                         <td>{{ $advertisement->service->name}}</td>
                         <td>{{ $advertisement->customer->name}}</td>
                         <td>
+                            @can('add_advertisement_request')
                             <a href="#" onclick="approve({{ $advertisement->id }})">
                                 <i class="align-middle me-2" data-feather="user-check"></i>
                             </a>
+                            @endcan
+                            @can('delete_advertisement_request')
                             <a href="#" onclick="deletes({{ $advertisement->id }})"><i class="align-middle"
                                                                                        data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

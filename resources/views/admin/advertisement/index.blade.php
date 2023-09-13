@@ -5,11 +5,13 @@
         <div class="col-auto d-none d-sm-block">
             <h3><strong>{{__('admin/pages/advertisements.title')}}</strong></h3>
         </div>
+        @can('add_advertisement')
         <div class="col-auto ms-auto text-end mt-n1">
             <a href="{{route('advertisements.create')}}" class="btn btn-primary">
                 {{__('admin/pages/advertisements.add.advertisement')}}
             </a>
         </div>
+            @endcan
     </div>
 @endsection
 @section('content')
@@ -52,11 +54,15 @@
                         <td>{{ $advertisement->categoryType->name }}</td>
                         <td>{{ $advertisement->service->name}}</td>
                         <td>
+                            @can('edit_advertisement')
                             <a href="{{route('advertisements.edit',$advertisement->id)}}">
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
+                            @endcan
+                            @can('delete_advertisement')
                             <a href="#" onclick="deletes({{ $advertisement->id }})"><i class="align-middle"
                                                                               data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

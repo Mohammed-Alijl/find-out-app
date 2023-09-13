@@ -5,11 +5,13 @@
         <div class="col-auto d-none d-sm-block">
             <h3><strong>{{__('admin/pages/categories.title')}}</strong></h3>
         </div>
+        @can('add_category')
         <div class="col-auto ms-auto text-end mt-n1">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">
                 {{__('admin/pages/categories.add.category')}}
             </button>
         </div>
+            @endcan
     </div>
 @endsection
 @section('content')
@@ -45,12 +47,17 @@
                         <td>{{$rowNumber++}}</td>
 
                         <td>
+                            @can('view_category')
                             <a href="{{route('categories.show',$category->id)}}">
                                 {{ $category->name }}
                             </a>
+                            @else
+                                {{$category->name}}
+                                @endcan
                         </td>
                         <td>{{ $category->categoryType->name }}</td>
                         <td>
+                            @can('edit_category')
                             <a href="#" data-bs-toggle="modal" data-bs-target="#edit"
                                data-id="{{ $category->id }}"
                                data-name_ar="{{ $category->getTranslation('name','ar') }}"
@@ -59,8 +66,11 @@
                             >
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
+                            @endcan
+                            @can('delete_category')
                             <a href="#" onclick="deletes({{ $category->id }})"><i class="align-middle"
                                                                                   data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

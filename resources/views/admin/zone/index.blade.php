@@ -5,11 +5,13 @@
         <div class="col-auto d-none d-sm-block">
             <h3><strong>{{__('admin/pages/zones.title')}}</strong></h3>
         </div>
+        @can('add_zone')
         <div class="col-auto ms-auto text-end mt-n1">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">
                 {{__('admin/pages/zones.add.zone')}}
             </button>
         </div>
+            @endcan
     </div>
 @endsection
 @section('content')
@@ -45,6 +47,7 @@
 
                         <td>{{ $zone->name }}</td>
                         <td>
+                            @can('edit_zone')
                             <a href="#" data-bs-toggle="modal" data-bs-target="#edit"
                                data-id="{{ $zone->id }}"
                                data-name_ar="{{ $zone->getTranslation('name','ar') }}"
@@ -52,8 +55,11 @@
                             >
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
+                            @endcan
+                            @can('delete_zone')
                             <a href="#" onclick="deletes({{ $zone->id }})"><i class="align-middle"
                                                                               data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

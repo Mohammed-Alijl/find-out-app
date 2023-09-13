@@ -5,11 +5,13 @@
         <div class="col-auto d-none d-sm-block">
             <h3><strong>{{__('admin/pages/customers.title')}}</strong></h3>
         </div>
+        @can('add_customer')
         <div class="col-auto ms-auto text-end mt-n1">
             <a href="{{route('customers.create')}}" class="btn btn-primary">
                 {{__('admin/pages/customers.add.customer')}}
             </a>
         </div>
+            @endcan
     </div>
 @endsection
 @section('content')
@@ -55,11 +57,15 @@
                         <td>{{ $customer->city->name }}</td>
                         <td>{{ $customer->platform }}</td>
                         <td>
+                            @can('edit_customer')
                             <a href="{{route('customers.edit',$customer->id)}}">
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
+                            @endcan
+                            @can('delete_customer')
                             <a href="#" onclick="deletes({{ $customer->id }})"><i class="align-middle"
                                                                               data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

@@ -5,11 +5,13 @@
         <div class="col-auto d-none d-sm-block">
             <h3><strong>{{__('admin/pages/pages.title')}}</strong></h3>
         </div>
+        @can('add_page')
         <div class="col-auto ms-auto text-end mt-n1">
             <a href="{{route('pages.create')}}" class="btn btn-primary">
                 {{__('admin/pages/pages.add.page')}}
             </a>
         </div>
+        @endcan
     </div>
 @endsection
 @section('content')
@@ -44,11 +46,15 @@
 
                         <td>{{ $page->name }}</td>
                         <td>
+                            @can('edit_page')
                             <a href="{{route('pages.edit',$page->id)}}">
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
+                            @endcan
+                            @can('delete_page')
                             <a href="#" onclick="deletes({{ $page->id }})"><i class="align-middle"
                                                                               data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

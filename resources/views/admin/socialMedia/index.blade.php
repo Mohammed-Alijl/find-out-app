@@ -42,6 +42,7 @@
                         <td>{{ $socialMedia->name }}</td>
                         <td>{{ $socialMedia->link }}</td>
                         <td>
+                            @can('edit_social')
                             <a href="#" data-bs-toggle="modal" data-bs-target="#edit"
                                data-id="{{ $socialMedia->id }}"
                                data-link="{{ $socialMedia->link }}"
@@ -49,6 +50,7 @@
                             >
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

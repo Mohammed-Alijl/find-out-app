@@ -5,11 +5,13 @@
         <div class="col-auto d-none d-sm-block">
             <h3><strong>{{__('admin/pages/services.title')}}</strong></h3>
         </div>
+        @can('add_service')
         <div class="col-auto ms-auto text-end mt-n1">
             <a href="{{route('services.create')}}" class="btn btn-primary">
                 {{__('admin/pages/services.add.service')}}
             </a>
         </div>
+            @endcan
     </div>
 @endsection
 @section('content')
@@ -46,18 +48,26 @@
                         <td>{{$rowNumber++}}</td>
 
                         <td>
+                            @can('view_service')
                             <a href="{{route('services.show',$service->id)}}">
                                 {{ $service->name }}
                             </a>
+                                @else
+                                {{ $service->name }}
+                            @endcan
                         </td>
                         <td>{{ $service->category->name }}</td>
                         <td>{{ $service->subCategory ? $service->subCategory->name : '' }}</td>
                         <td>
+                            @can('edit_service')
                             <a href="{{route('services.edit',$service->id)}}">
                                 <i class="align-middle" data-feather="edit-2"></i>
                             </a>
+                            @endcan
+                            @can('delete_service')
                             <a href="#" onclick="deletes({{ $service->id }})"><i class="align-middle"
                                                                               data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach

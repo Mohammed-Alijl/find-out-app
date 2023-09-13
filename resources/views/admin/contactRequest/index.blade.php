@@ -46,8 +46,10 @@
                         <td>{{ $contactRequest->title }}</td>
                         <td>{{ $contactRequest->message }}</td>
                         <td>
+                            @can('delete_contact')
                             <a href="#" onclick="deletes({{ $contactRequest->id }})"><i class="align-middle"
                                                                               data-feather="trash"></i></a>
+                                @endcan
                         </td>
                     </tr>
                 @endforeach
