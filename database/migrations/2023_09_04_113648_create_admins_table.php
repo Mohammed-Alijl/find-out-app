@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('password');
             $table->string('image')->default('admins/default.png');
-            $table->enum('platform',['android','ios'])->default('android');
             $table->string('mobile_number')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

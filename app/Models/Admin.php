@@ -20,7 +20,6 @@ class Admin extends Authenticatable
     'mobile_number',
     'password',
     'image',
-    'platform',
 ];
 
     protected $hidden = [
