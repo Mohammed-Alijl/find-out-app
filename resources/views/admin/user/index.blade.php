@@ -37,6 +37,7 @@
                     <th>{{__('admin/pages/users.username')}}</th>
                     <th>{{__('admin/pages/users.email')}}</th>
                     <th>{{__('admin/pages/users.mobile.number')}}</th>
+                    <th>{{__('admin/pages/users.role.name')}}</th>
                     <th>{{__('admin/pages/users.action')}}</th>
                 </tr>
                 </thead>
@@ -51,6 +52,7 @@
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->mobile_number }}</td>
+                        <td>{{ $user->roles->first()->name }}</td>
                         <td>
                             @if($user->roles->pluck('name','name')->first() != 'Admin')
                             @can('edit_user')

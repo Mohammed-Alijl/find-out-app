@@ -22,4 +22,5 @@ return [
   'role.invalid' => 'Please Select The Role',
   'choose' => 'Choose...',
   'edit.title' => 'Edit User',
+  'role.name' => 'Role Name',
 ];
