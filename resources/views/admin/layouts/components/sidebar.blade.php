@@ -48,7 +48,7 @@
                                     class="align-middle">{{__('admin/layouts/components/sidebar.dashboard')}}</span>
                             </a>
                         </li>
-
+                        @canany(['view_category_type', 'view_category'])
                         <li class="sidebar-item">
                             <a data-bs-target="#categories" data-bs-toggle="collapse" class="sidebar-link collapsed">
                                 <i class="align-middle me-2 fas fa-fw fa-list"></i> <span
@@ -71,7 +71,9 @@
                                 @endcan
                             </ul>
                         </li>
+                        @endcanany
 
+                        @canany(['view_zone', 'view_city'])
                         <li class="sidebar-item">
                             <a data-bs-target="#location" data-bs-toggle="collapse" class="sidebar-link collapsed">
                                 <i class="fas fa-globe"></i> <span
@@ -94,6 +96,7 @@
                                 @endcan
                             </ul>
                         </li>
+                        @endcanany
 
                         @can('view_service')
                             <li class="sidebar-item {{request()->route()->named(['services.index','services.create','services.edit','services.show']) ? 'active' : ''}}">
@@ -105,6 +108,7 @@
                             </li>
                         @endcan
 
+                        @canany(['view_advertisement','view_advertisement_request'])
                         <li class="sidebar-item">
                             <a data-bs-target="#ad" data-bs-toggle="collapse" class="sidebar-link collapsed">
                                 <i class="fas fa-ad"></i> <span
@@ -127,7 +131,9 @@
                                 @endcan
                             </ul>
                         </li>
+                        @endcanany
 
+                        @canany(['view_page','view_social','view_contact'])
                         <li class="sidebar-item">
                             <a data-bs-target="#settings" data-bs-toggle="collapse" class="sidebar-link collapsed">
                                 <i class="fas fa-cogs"></i><span
@@ -156,6 +162,9 @@
                                 @endcan
                             </ul>
                         </li>
+                        @endcanany
+
+                        @canany(['view_user','view_role'])
                         <li class="sidebar-item">
                             <a data-bs-target="#users" data-bs-toggle="collapse" class="sidebar-link collapsed">
                                 <i class="fas fa-key"></i><span
@@ -176,6 +185,7 @@
                                 @endcan
                             </ul>
                         </li>
+                        @endcanany
 
                         @can('view_customer')
                             <li class="sidebar-item {{request()->route()->named(['customers.index','customers.create','customers.edit']) ? 'active' : ''}}">
