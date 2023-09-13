@@ -86,4 +86,31 @@ class UserController extends Controller
         $this->userRepository->delete($id);
         return redirect()->route('users.index')->with('delete-success',__('success_messages.user.delete.success'));
     }
+
+    public function checkEmail(Request $request)
+    {
+        $email = $request->input('email');
+
+        $exists = $this->userRepository->checkEmail($email);
+
+        return response()->json(['exists' => $exists]);
+    }
+
+    public function checkMobile(Request $request)
+    {
+        $mobile_number = $request->input('mobile_number');
+
+        $exists = $this->userRepository->checkMobile($mobile_number);
+
+        return response()->json(['exists' => $exists]);
+    }
+
+    public function checkUsername(Request $request)
+    {
+        $username = $request->input('username');
+
+        $exists = $this->userRepository->checkUsername($username);
+
+        return response()->json(['exists' => $exists]);
+    }
 }

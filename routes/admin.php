@@ -81,6 +81,9 @@ Route::prefix('admin')->group(function () {
 
         //User
         Route::resource('users',UserController::class)->except(['show']);
+        Route::post('/user-check-email', [UserController::class, 'checkEmail'])->name('user-check-email');
+        Route::post('/user-check-username', [UserController::class, 'checkUsername'])->name('user-check-username');
+        Route::post('/user-check-mobile', [UserController::class, 'checkMobile'])->name('user-check-mobile-number');
     });
 
     //Auth:guest

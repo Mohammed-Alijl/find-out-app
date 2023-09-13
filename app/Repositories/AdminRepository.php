@@ -32,6 +32,7 @@ class AdminRepository implements BasicRepositoryInterface
             $admin->image = $path;
         }
         $admin->save();
+        $admin->assignRole([$request->role_id]);
     }
 
     public function update($request, $id)

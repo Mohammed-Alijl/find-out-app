@@ -84,7 +84,7 @@
 
 
         //Delete Customer Script
-        function deletes(customerId) {
+        function deletes(userId) {
             Swal.fire({
                 title: '{{__('admin/pages/customers.are.you.sure')}}',
                 text: "{{__('admin/pages/customers.not.able.revert')}}",
@@ -95,17 +95,17 @@
                 confirmButtonText: '{{__('admin/pages/customers.delete')}}'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    deleteCity(customerId);
+                    deleteCity(userId);
                 }
             })
         }
-        function deleteCity(customerId) {
+        function deleteCity(userId) {
             // Send an AJAX request or submit a form to the delete route
             const form = document.createElement('form');
             form.method = 'POST';
-            form.action = '{{ route('customers.destroy', ['customer' => '__customerId__']) }}'.replace('__customerId__', customerId);
+            form.action = '{{ route('users.destroy', ['user' => '__userId__']) }}'.replace('__userId__', userId);
             form.innerHTML = `<input type="hidden" name="_method" value="DELETE">`;
-            form.innerHTML = `<input type="hidden" name="id" value="${customerId}">`;
+            form.innerHTML = `<input type="hidden" name="id" value="${userId}">`;
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             const csrfInput = document.createElement('input');
             csrfInput.type = 'hidden';
