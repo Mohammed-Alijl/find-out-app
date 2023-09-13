@@ -162,15 +162,15 @@
                                     class="align-middle">{{__('admin/layouts/components/sidebar.users')}}</span>
                             </a>
                             <ul id="users"
-                                class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['roles.index']) ? 'show' : ''}}"
+                                class="sidebar-dropdown list-unstyled collapse {{request()->route()->named(['roles.index','roles.show','roles.edit','roles.create','users.index','users.edit','users.create']) ? 'show' : ''}}"
                                 data-bs-parent="#sidebar">
-                                @can('view_role')
-                                    <li class="sidebar-item {{request()->route()->named(['roles.index']) ? 'active' : ''}}">
-                                        <a class="sidebar-link"
-                                           href="#">{{__('admin/layouts/components/sidebar.users')}}</a></li>
-                                @endcan
                                 @can('view_user')
-                                    <li class="sidebar-item"><a class="sidebar-link"
+                                    <li class="sidebar-item {{request()->route()->named(['users.index','users.edit','users.create']) ? 'active' : ''}}">
+                                        <a class="sidebar-link"
+                                           href="{{route('users.index')}}">{{__('admin/layouts/components/sidebar.users')}}</a></li>
+                                @endcan
+                                @can('view_role')
+                                    <li class="sidebar-item {{request()->route()->named(['roles.index','roles.show','roles.edit','roles.create']) ? 'active' : ''}}"><a class="sidebar-link"
                                                                 href="{{route('roles.index')}}">{{__('admin/layouts/components/sidebar.roles')}}</a>
                                     </li>
                                 @endcan

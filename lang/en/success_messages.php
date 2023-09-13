@@ -80,9 +80,16 @@ return [
     'contact.delete.success'=>'Contact Request Was Deleted Successfully',
 
     //===================================================================================
-    // Role==============================================================================
+    // ROLE==============================================================================
     //===================================================================================
     'role.add.success'=>'Role Was Added Successfully',
     'role.edit.success'=>'Role Was Modified Successfully',
     'role.delete.success'=>'Role was deleted successfully',
+
+    //===================================================================================
+    // USER==============================================================================
+    //===================================================================================
+    'user.add.success'=>'User Was Added Successfully',
+    'user.edit.success'=>'User Was Modified Successfully',
+    'user.delete.success'=>'User was deleted successfully',
 ];

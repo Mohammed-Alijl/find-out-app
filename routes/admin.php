@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SocialMediaController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ZoneController;
 use Illuminate\Support\Facades\Route;
 
@@ -77,6 +78,9 @@ Route::prefix('admin')->group(function () {
 
         //Role
         Route::resource('roles',RoleController::class);
+
+        //User
+        Route::resource('users',UserController::class)->except(['show']);
     });
 
     //Auth:guest
