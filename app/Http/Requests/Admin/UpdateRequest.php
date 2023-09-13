@@ -23,11 +23,12 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:admins,email,' . $this->id,
-            'username' => 'required|string|regex:/\w*$/|unique:admins,username,' .  $this->id,
-            'mobile_number' => 'required|string|max:15|unique:admins,mobile_number' .  $this->id,
+            'email' => 'required|email|unique:admins,email,' . $this->route('user'),
+            'username' => 'required|string|regex:/\w*$/|unique:admins,username,' .  $this->route('user'),
+            'mobile_number' => 'required|string|max:15|unique:admins,mobile_number,' .  $this->route('user'),
             'password' => 'nullable|string|min:8|max:255|confirmed',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
+            'role_id' => 'required|integer|exists:roles,id',
         ];
     }
 }

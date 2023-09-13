@@ -11,6 +11,7 @@ return [
   'user.edit' => 'User Edited',
   'add.title' => 'Add User',
   'add.description' => 'Add User From Here!',
+  'edit.description' => 'Edit User From Here!',
   'name.invalid' => 'Please Enter The Name',
   'email.invalid' => 'Please Enter The Email',
   'username.invalid' => 'Please Enter A Valid Username',
@@ -20,4 +21,5 @@ return [
   'role' => 'Role',
   'role.invalid' => 'Please Select The Role',
   'choose' => 'Choose...',
+  'edit.title' => 'Edit User',
 ];

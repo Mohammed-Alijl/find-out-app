@@ -28,6 +28,7 @@ class StoreRequest extends FormRequest
             'mobile_number' => 'required|string|max:15|unique:admins,mobile_number',
             'password' => 'required|string|min:8|max:255|confirmed',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
+            'role_id' => 'required|integer|exists:roles,id',
         ];
     }
 }

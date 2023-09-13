@@ -52,6 +52,7 @@ class AdminRepository implements BasicRepositoryInterface
             $admin->password = Hash::make($request->password);
         }
         $admin->save();
+        $admin->syncRoles([$request->role_id]);
     }
 
     public function delete($id)

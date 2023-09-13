@@ -63,7 +63,7 @@ class UserController extends Controller
         if ($user->roles->pluck('name', 'name')->first() == "Admin")
             abort(403);
         $roles = $this->roleRepository->getAll();
-        return view('admin.user.create',compact('user','roles'));
+        return view('admin.user.edit',compact('user','roles'));
     }
 
     /**
