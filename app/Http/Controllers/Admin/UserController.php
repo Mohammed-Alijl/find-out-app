@@ -60,6 +60,8 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user = $this->userRepository->find($id);
+        if ($user->roles->pluck('name', 'name')->first() == "Admin")
+            abort(403);
         $roles = $this->roleRepository->getAll();
         return view('admin.user.create',compact('user','roles'));
     }
@@ -78,6 +80,9 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
+        $user = $this->userRepository->find($id);
+        if ($user->roles->pluck('name', 'name')->first() == "Admin")
+            abort(403);
         $this->userRepository->delete($id);
         return redirect()->route('users.index')->with('delete-success',__('success_messages.user.delete.success'));
     }
