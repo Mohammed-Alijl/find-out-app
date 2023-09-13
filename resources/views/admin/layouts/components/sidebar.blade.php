@@ -42,8 +42,8 @@
 
                     <ul class="sidebar-nav">
                         <li class="sidebar-header"></li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                        <li class="sidebar-item {{request()->route()->named(['dashboard']) ? 'active' : ''}}">
+                            <a href="{{route('dashboard')}}" class="sidebar-link">
                                 <i class="align-middle" data-feather="sliders"></i> <span
                                     class="align-middle">{{__('admin/layouts/components/sidebar.dashboard')}}</span>
                             </a>

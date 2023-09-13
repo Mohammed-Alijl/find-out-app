@@ -9,5 +9,5 @@
     </div>
 @endsection
 @section('content')
-    <img src="{{asset('img/photos/dashboard.png')}}" width="60%">
+    <img src="{{asset('img/photos/dashboard.svg')}}" width="55%">
 @endsection
