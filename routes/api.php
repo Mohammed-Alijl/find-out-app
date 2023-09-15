@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CategoryTypeController;
+use App\Http\Controllers\Api\ZoneController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Category Type
 Route::apiResource('category/types',CategoryTypeController::class)->except(['store','update','destroy']);
 
-//Category
+// Category
 Route::apiResource('categories',CategoryController::class)->except(['store','update','destroy']);
+
+// Zone
+Route::apiResource('zones',ZoneController::class)->except(['store','update','destroy']);
