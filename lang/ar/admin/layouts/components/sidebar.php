@@ -8,7 +8,7 @@ return [
     'types' => 'الأنواع',
     'location.management' => 'إدارة الموقع',
     'zones' => 'المناطق',
-    'cities' => 'المدن',
+    'cites' => 'المدن',
     'services' => 'الخدمات',
     'advertisements' => 'الإعلانات',
     'advertising.requests' => 'طلبات الإعلان',

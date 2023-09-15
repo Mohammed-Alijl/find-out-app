@@ -8,7 +8,7 @@ return [
     'types' => 'Types',
     'location.management' => 'Location Management',
     'zones' => 'Zones',
-    'cites' => 'Cites',
+    'cites' => 'Cities',
     'services' => 'Services',
     'advertisements' => 'Advertisements',
     'advertising.requests' => 'Advertising requests',
