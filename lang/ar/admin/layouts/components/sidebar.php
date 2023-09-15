@@ -4,7 +4,7 @@ return [
     'settings' => 'الإعدادات',
     'logout' => 'تسجيل الخروج',
     'dashboard' => 'لوحة التحكم',
-    'categories' => 'الفئات',
+    'categories' => 'الأقسام',
     'types' => 'الأنواع',
     'location.management' => 'إدارة الموقع',
     'zones' => 'المناطق',

@@ -110,5 +110,10 @@ return [
     'category.type.index' => 'All category types have been successfully restored',
     'category.type.show' => 'Category Type restored successfully',
 
+    //===================================================================================
+    // CATEGORY =========================================================================
+    //===================================================================================
+    'category.index' => 'All category have been successfully restored',
+    'category.show' => 'Category restored successfully',
 
 ];
