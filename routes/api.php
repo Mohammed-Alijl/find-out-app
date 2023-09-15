@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CategoryTypeController;
+use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\ZoneController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,6 @@ Route::apiResource('categories',CategoryController::class)->except(['store','upd
 
 // Zone
 Route::apiResource('zones',ZoneController::class)->except(['store','update','destroy']);
+
+// City
+Route::apiResource('cities',CityController::class)->except(['store','update','destroy']);

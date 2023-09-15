@@ -122,4 +122,10 @@ return [
     'zone.index' => 'All zones have been successfully restored',
     'zone.show' => 'Zone restored successfully',
 
+    //===================================================================================
+    // CITY =============================================================================
+    //===================================================================================
+    'city.index' => 'All cities have been successfully restored',
+    'city.show' => 'City restored successfully',
+
 ];

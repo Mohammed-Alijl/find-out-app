@@ -30,6 +30,7 @@ return [
     'city.name_en.required' => 'Please Enter The English City Name',
     'city.name_en.max' => 'The English City Name Is Too Long',
     'city.zone_id.required' => 'Please Select A Zone From Zone Selected Box',
+    'city.not_found' => 'City Is Not Exists.',
 
     //===================================================================================
     // CATEGORY TYPE=====================================================================
