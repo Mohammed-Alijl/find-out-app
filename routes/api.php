@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CategoryTypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Category Type
+Route::apiResource('category/types',CategoryTypeController::class)->except(['store','update','destroy']);
