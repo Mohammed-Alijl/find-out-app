@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AdvertisementController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CategoryTypeController;
 use App\Http\Controllers\Api\CityController;
+use App\Http\Controllers\Api\PageController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\ZoneController;
 use Illuminate\Http\Request;
@@ -43,3 +44,5 @@ Route::apiResource('services',ServiceController::class)->except(['store','update
 Route::apiResource('advertisements',AdvertisementController::class);
 Route::get('customer/advertisements/',[AdvertisementController::class,'getCustomerAdvertisements']);
 
+// Page
+Route::apiResource('pages',PageController::class)->except(['store','update','destroy']);

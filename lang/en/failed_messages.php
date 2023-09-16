@@ -125,6 +125,7 @@ return [
     'page.image.required' => 'Please Send The Image Page',
     'page.image.image' => 'Please Just Send Image',
     'page.image.mimes' => 'Image mimes should be jpg, png, jpeg or svg',
+    'page.not_found' => 'This Page Is Not Exists',
 
     //===================================================================================
     // SOCIAL MEDIA======================================================================

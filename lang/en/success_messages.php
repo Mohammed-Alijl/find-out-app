@@ -143,4 +143,9 @@ return [
     'advertisement.update' => 'Advertisement Was Modified Successfully',
     'advertisement.destroy' => 'Advertisement was deleted successfully',
 
+    //===================================================================================
+    // PAGE =============================================================================
+    //===================================================================================
+    'page.index' => 'All pages have been successfully restored',
+    'page.show' => 'Page restored successfully',
 ];
