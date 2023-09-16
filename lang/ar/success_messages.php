@@ -162,4 +162,6 @@ return [
     'customer.login' => 'تم تسجيل الدخول بنجاح',
     'customer.logout' => 'تم تسجيل الخروج بنجاح',
     'customer.register' => 'تم انشاء الحساب بنجاح',
+    'customer.show' => 'تم اعادة بيانات العميل بنجاح',
+
 ];

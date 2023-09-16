@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class CustomerResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'mobile_number' => $this->mobile_number,
+            'platform' => $this->platform,
+            'city' => [
+                'id' => $this->city->id,
+                'name' => $this->city->name,
+            ],
+            'zone' => [
+                'id' => $this->zone->id,
+                'name' => $this->zone->name,
+            ],
+        ];
+    }
+}

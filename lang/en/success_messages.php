@@ -167,4 +167,5 @@ return [
     'customer.login' => 'You have been logged in successfully',
     'customer.logout' => 'You have been logged out successfully',
     'customer.register' => 'You have been register successfully',
+    'customer.show' => 'Customer data restored successfully',
 ];

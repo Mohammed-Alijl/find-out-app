@@ -51,6 +51,8 @@ Route::apiResource('socials', SocialMediaController::class)->except(['store', 'u
 // Contact Us
 Route::apiResource('contact-us', ContactUsController::class)->except(['index', 'show', 'update', 'destroy']);
 
+// Customer
+Route::get('customers/{id}', [AuthController::class, 'show']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     // Advertisement
@@ -61,6 +63,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     // Auth
     Route::delete('auth/logout', [AuthController::class, 'logout']);
+    Route::get('auth/customer', [AuthController::class, 'getAuthCustomer']);
 
 });
 Route::middleware(['guest:sanctum'])->group(function () {
