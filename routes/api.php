@@ -4,8 +4,10 @@ use App\Http\Controllers\Api\AdvertisementController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CategoryTypeController;
 use App\Http\Controllers\Api\CityController;
+use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\PageController;
 use App\Http\Controllers\Api\ServiceController;
+use App\Http\Controllers\Api\SocialMediaController;
 use App\Http\Controllers\Api\ZoneController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +48,9 @@ Route::get('customer/advertisements/',[AdvertisementController::class,'getCustom
 
 // Page
 Route::apiResource('pages',PageController::class)->except(['store','update','destroy']);
+
+// Social Media
+Route::apiResource('socials',SocialMediaController::class)->except(['store','update','destroy']);
+
+// Contact Us
+Route::apiResource('contact-us',ContactUsController::class)->except(['index','show' ,'update','destroy']);

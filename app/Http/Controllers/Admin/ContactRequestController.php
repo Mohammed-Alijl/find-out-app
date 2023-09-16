@@ -69,6 +69,6 @@ class ContactRequestController extends Controller
     public function destroy(string $id)
     {
         $this->contactRepository->delete($id);
-        return redirect()->route('contacts.index')->with('delete-success',__('success_message.contact.delete.success'));
+        return redirect()->route('contacts.index')->with('delete-success',__('success_messages.contact.delete.success'));
     }
 }

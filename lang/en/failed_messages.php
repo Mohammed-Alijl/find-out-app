@@ -132,6 +132,7 @@ return [
     //===================================================================================
     'social.link.url' => 'Please Enter A Valid Link',
     'social.link.required' => 'The Link Is Required',
+    'socialMedia.not_found' => 'This social media Is Not Exists',
 
     //===================================================================================
     // CONTACT REQUEST===================================================================

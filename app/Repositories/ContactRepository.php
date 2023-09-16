@@ -25,6 +25,7 @@ class ContactRepository implements BasicRepositoryInterface
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->save();
+        return $contact;
     }
 
     public function update($request, $id)
