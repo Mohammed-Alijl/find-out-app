@@ -121,6 +121,7 @@ return [
     //===================================================================================
     'zone.index' => 'All zones have been successfully restored',
     'zone.show' => 'Zone restored successfully',
+    'zone.getCities' => 'All cities zone have been successfully restored',
 
     //===================================================================================
     // CITY =============================================================================

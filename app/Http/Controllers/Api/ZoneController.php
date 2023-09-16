@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CityResource;
 use App\Http\Resources\ZoneResource;
 use App\Repositories\ZoneRepository;
 use App\Traits\Api_Response;
@@ -55,5 +56,10 @@ class ZoneController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function getCities($id){
+        $cities = $this->zoneRepository->find($id)->cities;
+        return $this->apiResponse(CityResource::collection($cities),200,__('success_messages.zone.getCities'));
     }
 }

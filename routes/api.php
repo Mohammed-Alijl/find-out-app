@@ -31,6 +31,7 @@ Route::apiResource('categories', CategoryController::class)->except(['store', 'u
 
 // Zone
 Route::apiResource('zones', ZoneController::class)->except(['store', 'update', 'destroy']);
+Route::get('zone/cities/{id}',[ZoneController::class,'getCities']);
 
 // City
 Route::apiResource('cities', CityController::class)->except(['store', 'update', 'destroy']);
