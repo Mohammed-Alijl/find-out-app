@@ -142,4 +142,7 @@ return [
     'contact.title.required' => 'Please Enter The Title',
     'contact.title.max' => 'The Title Is Too Long',
     'contact.message.required' => 'Please Enter The Message',
+
+
+    'unauthorized' => 'You Are Unauthorized'
 ];

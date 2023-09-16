@@ -32,8 +32,11 @@ class AdvertisementController extends Controller
     public function store(StoreRequest $request)
     {
         try {
+            $customer = auth('sanctum')->user();
+            if(!$customer)
+                return $this->apiResponse(null,401,__('failed_messages.unauthorized'));
         $advertisement = $this->advertisementRepository->create($request);
-        $advertisement->user_id = auth('sanctum')->user()->id;
+        $advertisement->user_id = $customer->id;
         $advertisement->save();
         return $this->apiResponse(new AdvertisementResource($advertisement),201,__('success_messages.advertisement.store'));
         } catch (\Exception $ex) {
@@ -61,6 +64,8 @@ class AdvertisementController extends Controller
     {
         try {
             $customer = auth('sanctum')->user();
+            if(!$customer)
+                return $this->apiResponse(null,401,__('failed_messages.unauthorized'));
             if ($ad = $customer->advertisements->where('id',$id)->first()){
                 $this->advertisementRepository->update($request,$id);
                 return $this->apiResponse(new AdvertisementResource($ad),200,__('success_messages.advertisement.update'));
@@ -79,6 +84,8 @@ class AdvertisementController extends Controller
     {
         try {
             $customer = auth('sanctum')->user();
+            if(!$customer)
+                return $this->apiResponse(null,401,__('failed_messages.unauthorized'));
             if ($customer->advertisements->where('id',$id)->first()){
                 $this->advertisementRepository->delete($id);
                 return $this->apiResponse(null,200,__('success_messages.advertisement.destroy'));
@@ -87,5 +94,13 @@ class AdvertisementController extends Controller
         }catch (\Exception $ex){
             return $this->apiResponse(null, 500,$ex->getMessage());
         }
+    }
+
+    public function getCustomerAdvertisements(){
+        $customer = auth('sanctum')->user();
+        if(!$customer)
+            return $this->apiResponse(null,401,__('failed_messages.unauthorized'));
+        $data = $customer->advertisements->get();
+        return $this->apiResponse($data,200,__('success_messages.advertisement.index'));
     }
 }

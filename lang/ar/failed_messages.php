@@ -145,4 +145,6 @@ return [
     'contact.title.max' => 'يجب ان يكون العنوان اقل من 150 حرف',
     'contact.message.required' => 'رجاء ادخل الرسالة',
 
+    'unauthorized' => 'غير مصرح لك بالدخول'
+
 ];

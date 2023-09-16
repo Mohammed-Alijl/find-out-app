@@ -41,4 +41,5 @@ Route::apiResource('services',ServiceController::class)->except(['store','update
 
 // Advertisement
 Route::apiResource('advertisements',AdvertisementController::class);
+Route::get('customer/advertisements/',[AdvertisementController::class,'getCustomerAdvertisements']);
 
