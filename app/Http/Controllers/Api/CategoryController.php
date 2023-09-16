@@ -56,4 +56,9 @@ class CategoryController extends Controller
     {
         //
     }
+
+    public function getNestedCategories($id){
+        $data = CategoryResource::collection($this->categoryRepository->find($id)->childCategories);
+        return $this->apiResponse($data,200,__('success_messages.category.index'));
+    }
 }

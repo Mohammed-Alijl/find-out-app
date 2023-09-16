@@ -28,6 +28,7 @@ Route::apiResource('category/types', CategoryTypeController::class)->except(['st
 
 // Category
 Route::apiResource('categories', CategoryController::class)->except(['store', 'update', 'destroy']);
+Route::get('sub/category/{id}',[CategoryController::class,'getNestedCategories']);
 
 // Zone
 Route::apiResource('zones', ZoneController::class)->except(['store', 'update', 'destroy']);
