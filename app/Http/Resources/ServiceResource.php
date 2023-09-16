@@ -20,6 +20,12 @@ class ServiceResource extends JsonResource
                 'id' => $this->subCategory->id,
                 'name' => $this->subCategory->name
             ];
+
+        $images = [];
+        foreach ($this->images as $image){
+            $images[] = asset('storage/img/' . $image->path);
+        }
+
         return [
             'id' => $this->id,
             'name' => $this->name,
@@ -34,7 +40,11 @@ class ServiceResource extends JsonResource
                 'id' => $this->category->id,
                 'name' => $this->category->name
             ],
-            'sub_category' => $sub_category
+            'images' => $images,
+            'sub_category' => $sub_category,
+            'zones' => $this->zones,
+            'cities' => $this->cities,
+            'advertisements' => $this->advertisements
         ];
     }
 }
