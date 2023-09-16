@@ -128,4 +128,10 @@ return [
     'city.index' => 'All cities have been successfully restored',
     'city.show' => 'City restored successfully',
 
+    //===================================================================================
+    // SERVICE ==========================================================================
+    //===================================================================================
+    'service.index' => 'All services have been successfully restored',
+    'service.show' => 'Service restored successfully',
+
 ];

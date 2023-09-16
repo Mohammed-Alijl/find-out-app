@@ -92,6 +92,7 @@ return [
     'service.city_id.size' => 'You Should Enter A Mobile Number For All City',
     'service.mobile_number.required' => 'Please Enter One Mobile Number At Least',
     'service.mobile_number.size' => 'You Should Enter A Mobile Number For All City',
+    'service.not_found' => 'The Service Is Not Exists',
 
 
     //===================================================================================

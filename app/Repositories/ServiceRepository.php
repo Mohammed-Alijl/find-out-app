@@ -80,17 +80,17 @@ class ServiceRepository implements BasicRepositoryInterface
         if ($request->filled('facebook_link'))
             $service->facebook_link = $request->facebook_link;
         else
-            $service->facebook_link = '';
+            $service->facebook_link = null;
 
         if ($request->filled('instagram_link'))
             $service->instagram_link = $request->instagram_link;
         else
-            $service->instagram_link = '';
+            $service->instagram_link = null;
 
         if ($request->filled('twitter_link'))
             $service->twitter_link = $request->twitter_link;
         else
-            $service->twitter_link = '';
+            $service->twitter_link = null;
 
         $service->category_id = $request->category_id;
 
@@ -100,7 +100,7 @@ class ServiceRepository implements BasicRepositoryInterface
         if ($request->filled('details'))
             $service->details = $request->details;
         else
-            $service->details = '';
+            $service->details = null;
 
         if ($request->filled('sub_category_id'))
             $service->sub_category_id = $request->sub_category_id;
