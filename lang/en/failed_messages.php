@@ -62,10 +62,12 @@ return [
     'customer.email.unique' => 'This email address is already in use.',
     'customer.mobile_number.required' => 'Please enter your mobile number.',
     'customer.mobile_number.max' => 'Please enter a valid mobile number.',
+    'customer.mobile_number.regex' => 'Please enter a valid mobile number.',
     'customer.mobile_number.unique' => 'This mobile number is already in use.',
     'customer.password.required' => 'Please enter a password.',
     'customer.password.min' => 'Password should be at least 8 characters long.',
     'customer.password.max' => 'The Password Is Too Long',
+    'customer.password.confirmed' => 'Password Mismatch Hi Confirmation',
     'customer.zone_id.required' => 'Please Select A Valid Zone',
     'customer.city_id.required' => 'Please Select A Valid City',
     'customer.platform.required' => 'Please Select The Platform',
@@ -145,6 +147,10 @@ return [
     'contact.title.max' => 'The Title Is Too Long',
     'contact.message.required' => 'Please Enter The Message',
 
-
-    'unauthorized' => 'You Are Unauthorized'
+    //===================================================================================
+    // AUTH =============================================================================
+    //===================================================================================
+    'unauthorized' => 'You Are Unauthorized',
+    'auth.customer.not.found' => 'do not match our credentials',
+    'auth.password.mismatch' => 'The password is incorrect',
 ];

@@ -69,7 +69,8 @@ class AdvertisementController extends Controller
             if ($ad = $customer->advertisements->where('id',$id)->first()){
                 $this->advertisementRepository->update($request,$id);
                 return $this->apiResponse(new AdvertisementResource($ad),200,__('success_messages.advertisement.update'));
-            }
+            }else
+                return $this->apiResponse(null,404,__('failed_messages.advertisement.not_found'));
         }catch (\Exception $ex){
             return $this->apiResponse(null, 500,$ex->getMessage());
         }
@@ -100,7 +101,7 @@ class AdvertisementController extends Controller
         $customer = auth('sanctum')->user();
         if(!$customer)
             return $this->apiResponse(null,401,__('failed_messages.unauthorized'));
-        $data = $customer->advertisements->get();
+        $data = $customer->advertisements;
         return $this->apiResponse($data,200,__('success_messages.advertisement.index'));
     }
 }

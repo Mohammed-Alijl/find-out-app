@@ -63,10 +63,12 @@ return [
     'customer.email.unique' => 'هذا البريد الإلكتروني مستخدم بالفعل.',
     'customer.mobile_number.required' => 'الرجاء إدخال رقم هاتفك المحمول.',
     'customer.mobile_number.max' => 'الرجاء إدخال رقم هاتف محمول صالح.',
+    'customer.mobile_number.regex' => 'الرجاء إدخال رقم هاتف محمول صالح.',
     'customer.mobile_number.unique' => 'هذا الرقم المحمول مستخدم بالفعل.',
     'customer.password.required' => 'الرجاء إدخال كلمة مرور.',
     'customer.password.min' => 'يجب أن تتألف كلمة المرور من 8 أحرف على الأقل.',
     'customer.password.max' => 'كلمة المرور طويلة جدًا',
+    'customer.password.confirmed' => 'كلمة المرور لا تتطابق مع تأكيدها',
     'customer.zone_id.required' => 'الرجاء اختيار منطقة صالحة',
     'customer.city_id.required' => 'الرجاء اختيار مدينة صالحة',
     'customer.platform.required' => 'الرجاء اختيار منصة صالحة',
@@ -147,6 +149,11 @@ return [
     'contact.title.max' => 'يجب ان يكون العنوان اقل من 150 حرف',
     'contact.message.required' => 'رجاء ادخل الرسالة',
 
-    'unauthorized' => 'غير مصرح لك بالدخول'
+    //===================================================================================
+    // AUTH =============================================================================
+    //===================================================================================
+    'unauthorized' => 'غير مصرح لك بالدخول',
+    'auth.customer.not.found' => 'هذا البريد الاكنروني غير مسجل بعد',
+    'auth.password.mismatch' => 'كلمة المرور غير صحيحة',
 
 ];

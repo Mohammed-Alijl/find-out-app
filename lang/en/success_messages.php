@@ -160,4 +160,10 @@ return [
     //===================================================================================
     'contact.store' => 'Message Sent Successfully',
 
+    //===================================================================================
+    // AUTH =============================================================================
+    //===================================================================================
+    'customer.login' => 'You have been logged in successfully',
+    'customer.logout' => 'You have been logged out successfully',
+    'customer.register' => 'You have been register successfully',
 ];

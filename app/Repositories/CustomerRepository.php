@@ -29,6 +29,7 @@ class CustomerRepository implements BasicRepositoryInterface
         $customer->platform = $request->platform;
         $customer->password = Hash::make($request->password);
         $customer->save();
+        return $customer;
     }
 
     public function update($request, $id)
