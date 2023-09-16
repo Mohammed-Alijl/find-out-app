@@ -47,6 +47,7 @@ class AdvertisementRepository implements BasicRepositoryInterface
             $image->path = $path;
             $image->save();
         }
+        return $advertisement;
     }
 
     public function update($request, $id)

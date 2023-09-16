@@ -91,6 +91,7 @@
                             <label class="form-label"
                                    for="category_type">{{__('admin/pages/advertisements.category_type')}} <span style="color: red">*</span></label>
                             <select id="category_type" class="form-control" name="category_type_id" required>
+                                    <option value="" selected disabled>Choose...</option>
                                 @foreach($categoryTypes as $categoryType)
                                     <option value="{{$categoryType->id}}">{{$categoryType->name}}</option>
                                 @endforeach

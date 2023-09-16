@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AdvertisementController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CategoryTypeController;
 use App\Http\Controllers\Api\CityController;
@@ -37,3 +38,7 @@ Route::apiResource('cities',CityController::class)->except(['store','update','de
 
 // Service
 Route::apiResource('services',ServiceController::class)->except(['store','update','destroy']);
+
+// Advertisement
+Route::apiResource('advertisements',AdvertisementController::class);
+

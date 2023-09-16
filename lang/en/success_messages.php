@@ -134,4 +134,13 @@ return [
     'service.index' => 'All services have been successfully restored',
     'service.show' => 'Service restored successfully',
 
+    //===================================================================================
+    // ADVERTISEMENT ====================================================================
+    //===================================================================================
+    'advertisement.index' => 'All advertisements have been successfully restored',
+    'advertisement.show' => 'Advertisement restored successfully',
+    'advertisement.store' => 'Advertisement Was Added Successfully, Waiting For Admin Approve',
+    'advertisement.update' => 'Advertisement Was Modified Successfully',
+    'advertisement.destroy' => 'Advertisement was deleted successfully',
+
 ];

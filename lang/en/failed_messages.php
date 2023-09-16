@@ -113,7 +113,7 @@ return [
     'advertisement.city_id.integer' => 'Please Select The City From The City Selected Box',
     'advertisement.city_id.exists' => 'Please Select The City From The City Selected Box',
     'advertisement.city_id.required_if' => 'When You Select The Display Place [City, Both] You Should Select The City',
-
+    'advertisement.not_found' => 'Advertisement Is Not Found',
     //===================================================================================
     // PAGES=============================================================================
     //===================================================================================
