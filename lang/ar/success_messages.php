@@ -163,5 +163,6 @@ return [
     'customer.logout' => 'تم تسجيل الخروج بنجاح',
     'customer.register' => 'تم انشاء الحساب بنجاح',
     'customer.show' => 'تم اعادة بيانات العميل بنجاح',
+    'customer.update' => 'تم تعديل البيانات بنجاح',
 
 ];

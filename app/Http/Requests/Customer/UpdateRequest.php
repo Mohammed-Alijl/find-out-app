@@ -22,13 +22,13 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email, ' . $this->route('customer'),
-            'mobile_number' => 'required|string|max:15|unique:users,mobile_number, ' . $this->route('customer'),
+            'name' => 'sometimes|required|string|max:255',
+            'email' => 'sometimes|required|email|unique:users,email, ' . $this->route('customer'),
+            'mobile_number' => 'sometimes|required|string|max:15|unique:users,mobile_number, ' . $this->route('customer'),
             'password' => 'nullable|string|min:8|max:255|confirmed',
-            'zone_id' => 'required|integer|exists:zones,id',
-            'city_id' => 'required|integer|exists:cities,id',
-            'platform' => 'required|string|in:android,ios',
+            'zone_id' => 'sometimes|required|integer|exists:zones,id',
+            'city_id' => 'sometimes|required|integer|exists:cities,id',
+            'platform' => 'sometimes|required|string|in:android,ios',
         ];
     }
 

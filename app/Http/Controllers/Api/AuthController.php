@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Customer\LoginRequest;
 use App\Http\Requests\Customer\RegisterRequest;
+use App\Http\Requests\Customer\UpdateRequest;
 use App\Http\Resources\CustomerResource;
 use App\Models\User;
 use App\Repositories\CustomerRepository;
@@ -53,5 +54,10 @@ class AuthController extends Controller
     public function getAuthCustomer(){
         $customer = auth('sanctum')->user();
         return $this->apiResponse(new CustomerResource($customer),200,__('success_messages.customer.show'));
+    }
+
+    public function update(UpdateRequest $request){
+        $customer = $this->customerRepository->update($request, auth('sanctum')->id());
+        return $this->apiResponse(new CustomerResource($customer),200,__('success_messages.customer.update'));
     }
 }
