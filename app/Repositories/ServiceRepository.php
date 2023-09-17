@@ -23,8 +23,8 @@ class ServiceRepository implements BasicRepositoryInterface
     {
         //Create The Service
         $service = new Service();
-        $service->setTranslation('name','ar',$request->name_ar);
-        $service->setTranslation('name','en',$request->name_en);
+        $service->setTranslation('name', 'ar', $request->name_ar);
+        $service->setTranslation('name', 'en', $request->name_en);
         $service->category_id = $request->category_id;
 
         if ($request->filled('start_at')) {
@@ -57,10 +57,13 @@ class ServiceRepository implements BasicRepositoryInterface
         $service->zones()->sync($request->zone_id);
 
         //Detected The Cities Of Services
+        $cityData = [];
         foreach ($request->city_id as $index => $cityId) {
             $mobileNumber = $request->mobile_number[$index];
-            $service->cities()->attach($cityId, ['mobile_number' => $mobileNumber]);
+            $cityData[$cityId] = ['mobile_number' => $mobileNumber];
         }
+
+        $service->cities()->sync($cityData);
 
 
     }
@@ -68,12 +71,12 @@ class ServiceRepository implements BasicRepositoryInterface
     public function update($request, $id)
     {
         $service = $this->find($id);
-        $service->setTranslation('name','ar',$request->name_ar);
-        $service->setTranslation('name','en',$request->name_en);
+        $service->setTranslation('name', 'ar', $request->name_ar);
+        $service->setTranslation('name', 'en', $request->name_en);
         if ($request->filled('start_at')) {
             $service->start_at = $request->start_at;
             $service->end_at = $request->end_at;
-        }else{
+        } else {
             $service->start_at = null;
             $service->end_at = null;
         }
@@ -123,15 +126,19 @@ class ServiceRepository implements BasicRepositoryInterface
                 $image->save();
             }
         }
-            //Update Detected Zones
-            $service->zones()->sync($request->zone_id);
+        //Update Detected Zones
+        $service->zones()->sync($request->zone_id);
 
-            //Update Detected Cities
-            $service->cities()->detach();
-            foreach ($request->city_id as $index => $cityId) {
-                $mobileNumber = $request->mobile_number[$index];
-                $service->cities()->attach($cityId, ['mobile_number' => $mobileNumber]);
-            }
+        //Update Detected Cities
+        $service->cities()->detach();
+        //Detected The Cities Of Services
+        $cityData = [];
+        foreach ($request->city_id as $index => $cityId) {
+            $mobileNumber = $request->mobile_number[$index];
+            $cityData[$cityId] = ['mobile_number' => $mobileNumber];
+        }
+
+        $service->cities()->sync($cityData);
 
 
     }

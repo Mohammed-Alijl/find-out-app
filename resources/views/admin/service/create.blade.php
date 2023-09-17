@@ -209,6 +209,7 @@
                                                for="inputZone">{{__('admin/pages/services.zone')}} <span style="color:red">*</span></label>
                                         <select id="inputZone" class="form-control choices-single" name="zone_id[]"
                                                 required>
+                                            <option value="" disabled selected>Choose...</option>
                                             @foreach($zones as $zone)
                                                 <option value="{{$zone->id}}">{{$zone->name}}</option>
                                             @endforeach
